@@ -16,9 +16,11 @@ import {
 } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { Badge } from "@/components/ui/badge";
+import { useCart } from "@/lib/cart/store";
 
 export function Header() {
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
+  const { totalQuantity } = useCart();
 
   return (
     <header className="sticky top-0 z-50 w-full border-b bg-background/95 backdrop-blur supports-[backdrop-filter]:bg-background/60">
@@ -101,7 +103,7 @@ export function Header() {
               <ShoppingCart className="w-4 h-4 text-slate-800" />
               <span className="hidden sm:inline font-semibold">Cart</span>
               <Badge variant="default" className="h-5 min-w-[20px] px-1 bg-blue-600 text-xs">
-                0
+                {totalQuantity}
               </Badge>
             </Button>
           </Link>

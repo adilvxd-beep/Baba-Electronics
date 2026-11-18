@@ -2,6 +2,7 @@ import type { Metadata, Viewport } from "next";
 import "./globals.css";
 import { Header } from "@/components/layout/Header";
 import { Footer } from "@/components/layout/Footer";
+import { CartProvider } from "@/lib/cart/store";
 
 export const metadata: Metadata = {
   title: "Baba Electronics | IoT Dev Boards, Components & Custom Billboard Engineering",
@@ -24,9 +25,11 @@ export default function RootLayout({
   return (
     <html lang="en">
       <body className="font-sans min-h-screen flex flex-col bg-slate-50 antialiased">
-        <Header />
-        <main className="flex-1">{children}</main>
-        <Footer />
+        <CartProvider>
+          <Header />
+          <main className="flex-1">{children}</main>
+          <Footer />
+        </CartProvider>
       </body>
     </html>
   );
