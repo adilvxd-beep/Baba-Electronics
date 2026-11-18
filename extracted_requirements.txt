@@ -1,0 +1,474 @@
+Baba Electronics E-commerce - Requirements Specification
+Nov 19, 2026 · @silver
+1. Overview
+Baba Electronics gets a mobile-first online store for IoT boards, dev kits and custom builds, selling across India in INR, with OAuth and mobile OTP as the main login. Confirmed means the client said it in the questionnaire; Assumed means our recommended default, still to be confirmed.
+Item
+Detail
+Status
+Client
+Baba Electronics, 25+ years in business
+Confirmed
+Products
+Logo sync boards, custom-build boards and billboards, dev kits (ESP32, Arduino), digital sensors, switches
+Confirmed
+Current sales
+JustDial and Kripko; no website or app today
+Confirmed
+Goal
+Online selling, order management, customer management
+Confirmed
+Market
+India only, INR, English plus multi-language, all buyer types
+Confirmed
+Sales model
+B2C and B2B on one site
+Confirmed
+Product source
+Own-made and traded products together
+Confirmed
+Year-one targets
+About 150 orders a month, 100 business accounts, 30% repeat buyers
+Assumed
+Traffic
+5,000 to 20,000 visitors a month, built for 10x growth
+Assumed
+Future
+More product lines and a mobile app; API-first backend
+Assumed
+2. Authentication: OAuth and OTP
+Customers sign in with OAuth or a mobile OTP and never set a password, and every account ends up with a verified mobile number.
+Rule
+Decision
+Status
+Login methods
+Mobile OTP and OAuth are the two main methods; no customer passwords
+Confirmed
+OAuth provider
+Google first; Apple or Microsoft only if the client asks later
+Assumed
+OTP delivery
+SMS and WhatsApp
+Confirmed
+Verified mobile
+OAuth users verify a mobile number by OTP before their first order, because WhatsApp updates, COD checks and shipping need it
+Assumed
+Account matching
+One account per verified mobile number; the OAuth email links to it, so one person never gets two accounts
+Assumed
+OTP rules
+6 digits, 5-minute expiry, 3 resends, 10 requests per day per number
+Assumed
+Guest checkout
+Not allowed; login is required before checkout
+Confirmed
+Business details
+GSTIN is optional in the profile; auto-filling business details from a GSTIN needs a paid GST verification API
+Open: client asked
+Sessions
+Stay signed in on the device, with a sign-out-everywhere option
+Assumed
+Admin login
+Separate: email, password and two-factor code
+Assumed
+Abuse protection
+CAPTCHA and rate limits on OTP requests
+Assumed
+What we need from the client
+A Google Cloud project owned by the client, with the OAuth consent screen, domain and privacy policy URL
+DLT registration (Principal Entity ID, one transactional header, approved OTP template) for SMS OTP
+A WhatsApp Business API account with an approved authentication template
+An SMS gateway account, MSG91 recommended
+3. Users, accounts and sales model
+One store serves retail and business buyers at a single price, and sales reps can place orders on behalf of customers.
+Rule
+Decision
+Status
+Sales model
+B2C and B2B on one site
+Confirmed
+Customer types
+Retail, wholesale, dealer, institutional and government buyers, all served
+Confirmed
+Pricing by group
+One price for all customers
+Confirmed
+Dealer credit
+None
+Confirmed
+Business accounts
+Saved with GSTIN only, no approval step
+Confirmed
+Company accounts
+Several staff users under one company, phase 2
+Assumed
+Addresses
+Multiple shipping and billing addresses, GSTIN per address
+Confirmed
+Conveniences
+Wishlist, saved carts, reorder, quick order
+Confirmed
+Sales reps
+Place orders on behalf of customers, with login-as-customer
+Confirmed
+Platform
+Mobile-first responsive site, PWA-ready; native app later
+Assumed
+4. Product catalog
+Products sit in categories and sub-categories, with auto-generated, editable slugs that include the SKU.
+Rule
+Decision
+Status
+Category depth
+Category and sub-category only
+Confirmed
+Categories per product
+More than one allowed, but not required
+Confirmed
+Primary category
+One primary category drives breadcrumbs and the URL
+Assumed
+Category fields
+Name, image, banner, icon, description, SEO title and meta, display order, active toggle
+Confirmed
+Other groupings
+Brand and application, used as filters
+Assumed
+Tags
+Not at launch; may come later as admin-managed badges such as New and Sale
+Confirmed
+Slug creation
+Auto-generated from the name, editable by admin
+Confirmed
+Product URL
+Includes the SKU
+Confirmed
+Category URL
+Nested (/category/sub-category)
+Assumed
+Duplicate slug
+Append -2; the SKU already keeps URLs unique
+Assumed
+Name or slug change
+Automatic 301 redirect from the old URL
+Assumed
+Slug language
+English only
+Assumed
+Product types
+Simple and variable
+Confirmed
+Product fields
+Name, SKU, HSN, short and long description, MRP, selling price, GST rate, weight, dimensions, brand, unit, MOQ, warranty, country of origin
+Confirmed
+Technical specs
+Optional per product; voltage, interface, chip, pins, memory as filters
+Confirmed
+Media
+Flexible number of images; datasheets and tutorials on the product page
+Confirmed
+Downloads
+Public
+Confirmed
+Related products
+Manual picks plus same-category suggestions
+Assumed
+Product statuses
+Draft, published, scheduled, archived; out-of-stock items stay visible
+Assumed
+Bulk import
+Excel or CSV using a template we provide
+Assumed
+Reviews
+Verified buyers only, moderated by admin
+Assumed
+Compare
+Up to 4 products
+Assumed
+Scale
+200 to 500 SKUs now, 1,000+ in 2 years
+Assumed
+5. Variants and custom builds
+Variants are optional per product, and custom boards go through a quote form instead of fixed options.
+Rule
+Decision
+Status
+Variants
+Only on some products; a product can start without variants and gain them later
+Confirmed
+Attribute choice
+Different dev board models are separate products; variants cover options such as memory, header pins and colour
+Assumed
+Attributes per product
+Up to 3
+Assumed
+Attribute sets
+Defined per category; a product can add extras
+Assumed
+Per-variant data
+SKU, price, stock, images, weight, HSN/GST, MOQ
+Assumed
+Display
+Dropdown or buttons; swatches for colour
+Assumed
+Bulk order matrix
+Quantities for many variants on one screen
+Confirmed
+Variant URL
+Own slug per variant
+Confirmed
+Default variant
+Cheapest in-stock variant preselected
+Assumed
+Out-of-stock variant
+Greyed out with a Notify me option
+Assumed
+Variant images
+Own gallery where images differ, otherwise inherited
+Assumed
+Custom builds
+Spec form with file upload, handled as a quote, priced after review
+Assumed
+Pack sizes
+1, 5 and 10 for sensors and components, with MOQ where needed
+Assumed
+6. Pricing, quotes and discounts
+Prices are public and the same for everyone, with quotes for custom work and quantity slabs for components.
+Rule
+Decision
+Status
+Price display
+Visible to guests; GST added later
+Confirmed
+Price lists
+One price for all customers
+Confirmed
+Loyalty program
+None
+Confirmed
+Quantity slabs
+10+ and 50+ for components and kits
+Assumed
+Request a quote
+For custom boards, billboards and bulk; valid 15 days; convertible to an order
+Assumed
+Negotiated prices
+Not at launch; only through quotes
+Assumed
+Discounts
+Coupon code (percent or flat), free shipping above a value, first-order discount
+Assumed
+Stacking
+One coupon per order, not combined with sale prices
+Assumed
+Scheduled sales
+Start and end dates for festival pricing
+Assumed
+Minimum order
+MOQ per product where needed; no minimum order value
+Assumed
+Price updates
+Manual edits and bulk Excel upload
+Assumed
+Rounding
+Nearest rupee; 2 decimals on invoices
+Assumed
+7. Inventory, suppliers and mixed catalog
+The platform is the source of truth for stock, because the client has no inventory system or warehouse today.
+Rule
+Decision
+Status
+Existing stock system
+None
+Confirmed
+Warehouses
+None yet; one pickup location, address to be provided
+Confirmed
+Product source
+Own-made and traded products together
+Confirmed
+Stock model
+Ready stock for kits and sensors; made-to-order for custom boards
+Assumed
+Stock sync
+Real time
+Assumed
+Low stock alerts
+Threshold per product; alert on the dashboard and WhatsApp
+Assumed
+Backorders
+On selected products, shown as Ships in X days
+Assumed
+Stock reservation
+15 minutes during checkout
+Assumed
+Kits
+Starter kits with stock derived from their components
+Assumed
+Batch and serial
+Optional batch tracking; serial numbers later
+Assumed
+Production tasks
+Custom orders create an internal task and notify the team on WhatsApp
+Assumed
+Partial shipments
+Allowed; customer notified
+Assumed
+Traded items
+Held in own stock; supplier name and purchase price hidden from buyers; basic vendor records
+Assumed
+Brand display
+Own-brand badge on own-made items; supplier brand shown on traded items
+Assumed
+Tax and warranty
+GST/HSN, warranty and return terms set per product
+Assumed
+Margin
+Separate margin field per source type for reporting
+Assumed
+Certificates
+Only where they apply (for example power adapters); optional upload per product
+Assumed
+Warranty
+Period per product (for example 6 months on boards); claim by order number
+Assumed
+8. Cart, checkout, orders and returns
+Checkout is a single page after login, COD is allowed, and custom orders need admin approval.
+Rule
+Decision
+Status
+Checkout style
+Single page after login
+Assumed
+Extra fields
+GSTIN (optional), company name, delivery notes
+Assumed
+Order modes
+Instant buy for catalog items; quote request for custom builds
+Assumed
+Quick order
+Reorder, saved lists and order by SKU
+Confirmed
+Order statuses
+Placed, confirmed, in production (custom only), packed, shipped, delivered, cancelled, returned
+Assumed
+Admin approval
+Not for prepaid orders; required for COD above a set value and for all custom orders
+Assumed
+Order number
+Prefix, year and running number, e.g. BE-2026-000001
+Assumed
+Cancellation
+Free until the order is packed
+Assumed
+Returns
+7 days, unused and in original packaging; defective items replaced; custom items excluded
+Assumed
+Order edits
+Admin only
+Assumed
+Tracking
+Customer dashboard plus a WhatsApp tracking link
+Assumed
+Recurring orders
+None; a Reorder button instead
+Assumed
+Abandoned cart
+WhatsApp reminders after 1 hour and 24 hours
+Assumed
+Warranty registration
+Automatic from the order; service request form later
+Assumed
+9. Payments, GST and invoicing
+Razorpay handles payments, COD is allowed, and custom builds take a 50% advance.
+Rule
+Decision
+Status
+Payment methods
+Any method Razorpay supports: UPI, cards, net banking, wallets
+Confirmed
+Gateway
+Razorpay
+Confirmed
+Cash on delivery
+Allowed
+Confirmed
+COD limits
+Order value cap, COD charge and pincode limits still to be set
+Open
+Advance payment
+50% advance for custom builds, balance before dispatch; full payment for catalog items
+Assumed
+Bank transfer
+For business orders, with UTR entry and admin verification
+Assumed
+Refunds
+To the original payment source through Razorpay; admin approves
+Assumed
+International payments
+None
+Assumed
+Failed payments
+Order held 30 minutes, retry link, WhatsApp reminder
+Assumed
+GST rates and HSN
+Added later by the client
+Confirmed
+Tax logic
+One GSTIN; CGST/SGST inside the state, IGST outside
+Assumed
+E-invoice
+Only if the turnover threshold is crossed; confirm with their accountant
+Open
+TCS and TDS
+Not applicable; confirm with their accountant
+Open
+Invoice
+Automatic PDF with logo, GSTIN, bank details, terms, signature and QR; financial-year numbering; credit notes on refund
+Assumed
+Accounting
+No live sync; CSV export for Tally
+Assumed
+Reconciliation
+Razorpay settlement report matched to orders
+Assumed
+10. Shipping and logistics
+Shiprocket ships parcels across India at weight-based rates, and large billboards are quoted separately.
+Rule
+Decision
+Status
+Coverage
+Pan-India
+Assumed
+Carrier
+Courier through Shiprocket (rates, labels, tracking in one place)
+Assumed
+Shipping charges
+Weight-based by zone; free above a set order value
+Assumed
+Product weights
+Client must add a weight to every product before launch
+Assumed
+Pickup
+One location, address to be provided
+Assumed
+Pincode check
+On the product page, with estimated delivery date
+Assumed
+Labels and booking
+From the admin panel through Shiprocket
+Assumed
+Tracking
+Automatic status sync with WhatsApp updates
+Assumed
+Large billboards
+Quoted separately
+Assumed
+Packaging
+Included in price; fragile marking for boards, special handling for batteries; optional insurance
+Assumed
+Return pickup
+Through Shiprocket
+Assumed
+Installation and export
+Not offered
+Assumed
