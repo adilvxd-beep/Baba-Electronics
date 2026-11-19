@@ -34,7 +34,9 @@ pnpm-debug.log*
 *.swp
 *.swo
 
-# Temporary & Cache
+# TypeScript
+*.tsbuildinfo
+next-env.d.ts
 .cache/
 tmp/
 coverage/

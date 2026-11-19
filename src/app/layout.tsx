@@ -8,6 +8,14 @@ export const metadata: Metadata = {
   title: "Baba Electronics | IoT Dev Boards, Components & Custom Billboard Engineering",
   description:
     "India's premier store for IoT development boards (ESP32, Arduino), digital sensors, components, and bespoke custom electronic billboards. Fast pan-India delivery & verified GST invoices.",
+  icons: {
+    icon: [
+      { url: "/logo.png", sizes: "any" },
+      { url: "/logo.png", type: "image/png" },
+    ],
+    shortcut: "/logo.png",
+    apple: "/logo.png",
+  },
 };
 
 export const viewport: Viewport = {

@@ -2,6 +2,7 @@
 
 import React, { useState } from "react";
 import Link from "next/link";
+import Image from "next/image";
 import { 
   Search, 
   ShoppingCart, 
@@ -51,14 +52,15 @@ export function Header() {
       {/* Main Navigation Bar */}
       <div className="container mx-auto flex h-16 items-center justify-between gap-4 px-4">
         {/* Brand Logo */}
-        <Link href="/" className="flex items-center gap-2 font-bold text-xl tracking-tight text-slate-900">
-          <div className="w-9 h-9 rounded-lg bg-blue-600 flex items-center justify-center text-white shadow-md">
-            <Cpu className="w-5 h-5" />
-          </div>
-          <div className="flex flex-col">
-            <span className="leading-none text-slate-950 font-extrabold text-lg">BABA</span>
-            <span className="text-[10px] text-blue-600 tracking-wider font-semibold uppercase">Electronics</span>
-          </div>
+        <Link href="/" className="flex items-center gap-2 group shrink-0">
+          <Image
+            src="/header-logo.png"
+            alt="Baba Electronics - आपका अपना Electronics Store"
+            width={180}
+            height={60}
+            priority
+            className="h-10 md:h-12 w-auto object-contain transition-transform group-hover:scale-[1.02]"
+          />
         </Link>
 
         {/* Search Bar (Desktop) */}

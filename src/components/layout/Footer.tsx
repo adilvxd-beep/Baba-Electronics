@@ -99,8 +99,16 @@ export function Footer() {
       </div>
 
       {/* Copyright & Disclaimer */}
-      <div className="border-t border-slate-900 py-6 text-center text-xs text-slate-500">
-        <p>&copy; {new Date().getFullYear()} Baba Electronics. All rights reserved. Prices in INR inclusive/exclusive of GST as stated.</p>
+      <div className="border-t border-slate-900 py-6 text-xs text-slate-500">
+        <div className="container mx-auto px-4 flex flex-col sm:flex-row items-center justify-between gap-3 text-center sm:text-left">
+          <p>&copy; {new Date().getFullYear()} Baba Electronics. All rights reserved. Prices in INR inclusive/exclusive of GST as stated.</p>
+          <p className="text-slate-400">
+            Designed & Developed by{" "}
+            <span className="text-slate-200 font-medium tracking-wide">
+              VisionX Digital
+            </span>
+          </p>
+        </div>
       </div>
     </footer>
   );
