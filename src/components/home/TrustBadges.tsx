@@ -33,13 +33,13 @@ const TRUST_ITEMS = [
 
 export function TrustBadges() {
   return (
-    <div className="rounded-2xl bg-white border border-slate-200/80 p-5 shadow-sm">
+    <div className="rounded-2xl bg-white p-5 shadow-sm">
       <div className="grid grid-cols-2 md:grid-cols-5 gap-4 divide-y md:divide-y-0 md:divide-x divide-slate-100">
         {TRUST_ITEMS.map((item, idx) => {
           const Icon = item.icon;
           return (
-            <div key={idx} className="flex items-center gap-3.5 px-3 py-2">
-              <div className="w-10 h-10 rounded-xl bg-amber-500/10 text-amber-600 border border-amber-500/20 flex items-center justify-center shrink-0">
+            <div key={idx} className="flex items-center gap-3.5 px-3 py-1.5">
+              <div className="w-10 h-10 rounded-xl bg-amber-500/10 text-amber-600 flex items-center justify-center shrink-0">
                 <Icon className="w-5 h-5" />
               </div>
               <div>

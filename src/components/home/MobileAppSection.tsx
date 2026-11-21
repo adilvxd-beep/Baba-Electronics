@@ -77,7 +77,7 @@ export function MobileAppSection() {
             </div>
 
             <div className="flex items-start gap-2.5">
-              <div className="w-6 h-6 rounded-md bg-blue-500/20 text-blue-400 flex items-center justify-center shrink-0 mt-0.5">
+              <div className="w-6 h-6 rounded-md bg-amber-500/20 text-amber-400 flex items-center justify-center shrink-0 mt-0.5">
                 <Zap className="w-6 h-6" />
               </div>
               <div>

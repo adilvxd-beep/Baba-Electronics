@@ -33,23 +33,17 @@ export default function HomePage() {
         {/* 5. Featured Category 1: Sensors & Modules */}
         <CategoryShowcase
           categoryTitle="Wide Range of Sensors & Modules"
-          categorySubtitle="Precision temperature, gas, motion, ultrasonic and soil testing modules for embedded systems"
+          categorySubtitle="Precision temperature, gas, motion, and environmental modules"
           categoryFilter="Sensors"
           categorySlug="sensors"
-          bannerImage="https://images.unsplash.com/photo-1555680202-c86f0e12f086?w=800&auto=format&fit=crop&q=80"
-          badgeText="High Precision"
-          themeColor="amber"
         />
 
         {/* 6. Featured Category 2: IoT & Dev Kits */}
         <CategoryShowcase
           categoryTitle="IoT & Microcontroller Dev Boards"
-          categorySubtitle="ESP32 dual-core Wi-Fi + BLE, Arduino compatibles, and low-power microcontrollers"
+          categorySubtitle="ESP32 dual-core Wi-Fi + BLE, Arduino compatibles, and dev kits"
           categoryFilter="IoT"
           categorySlug="esp32"
-          bannerImage="https://images.unsplash.com/photo-1518770660439-4636190af475?w=800&auto=format&fit=crop&q=80"
-          badgeText="Ready Stock"
-          themeColor="slate"
         />
 
         {/* 7. Mobile App & WhatsApp Quick Ordering Section */}

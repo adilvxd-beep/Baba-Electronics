@@ -94,7 +94,7 @@ export default function CatalogPage() {
               placeholder="Filter by name or SKU..."
               value={searchQuery}
               onChange={(e) => setSearchQuery(e.target.value)}
-              className="w-full rounded-lg border border-slate-300 bg-white pl-9 pr-3 py-2 text-xs focus:outline-none focus:ring-1 focus:ring-blue-600"
+              className="w-full rounded-lg border border-slate-300 bg-white pl-9 pr-3 py-2 text-xs focus:outline-none focus:ring-1 focus:ring-amber-500"
             />
           </div>
 

@@ -44,11 +44,11 @@ export function ClientTestimonials() {
         </div>
       </div>
 
-      <div className="grid grid-cols-1 md:grid-cols-3 gap-4">
+      <div className="grid grid-cols-1 md:grid-cols-3 gap-5">
         {TESTIMONIALS.map((t, idx) => (
           <div
             key={idx}
-            className="p-5 rounded-xl bg-white border border-slate-200/80 shadow-sm flex flex-col justify-between space-y-4 hover:border-amber-400 hover:shadow-md transition-all duration-200"
+            className="p-6 rounded-2xl bg-white shadow-sm hover:shadow-xl hover:-translate-y-1 transition-all duration-300 flex flex-col justify-between space-y-4"
           >
             <div className="space-y-3">
               <div className="flex items-center justify-between">
