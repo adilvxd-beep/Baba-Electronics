@@ -34,19 +34,19 @@ export function ProductCard({ product, priority = false }: ProductCardProps) {
   };
 
   return (
-    <div className="group relative flex flex-col justify-between bg-white rounded-2xl p-3.5 hover:shadow-xl hover:-translate-y-1 transition-all duration-300">
+    <div className="group relative flex flex-col justify-between bg-white rounded-2xl overflow-hidden border border-transparent hover:border-slate-200 hover:shadow-xl hover:-translate-y-1 transition-all duration-300">
       <div>
-        {/* Spacious, Neutral Product Thumbnail */}
-        <div className="relative aspect-square w-full rounded-xl bg-slate-50/80 p-4 overflow-hidden flex items-center justify-center mb-3">
+        {/* Full-Width Edge-to-Edge Product Thumbnail (Flush with Top & Sides) */}
+        <div className="relative aspect-square w-full bg-slate-50/80 overflow-hidden flex items-center justify-center">
           {/* Minimalist Micro Discount Pill */}
           {discountPercent > 0 && (
-            <span className="absolute top-2.5 left-2.5 z-10 bg-amber-500/95 backdrop-blur-sm text-slate-950 font-extrabold text-[10px] px-2 py-0.5 rounded-full shadow-sm tracking-tight">
+            <span className="absolute top-3 left-3 z-10 bg-amber-500/95 backdrop-blur-sm text-slate-950 font-extrabold text-[10px] px-2 py-0.5 rounded-full shadow-sm tracking-tight">
               {discountPercent}% OFF
             </span>
           )}
 
-          {/* Product Image */}
-          <Link href={`/products/${product.slug}`} className="w-full h-full flex items-center justify-center">
+          {/* Product Image - Maximum Width */}
+          <Link href={`/products/${product.slug}`} className="w-full h-full flex items-center justify-center p-2 sm:p-3">
             {product.images && product.images[0] ? (
               <img
                 src={product.images[0]}
@@ -62,7 +62,7 @@ export function ProductCard({ product, priority = false }: ProductCardProps) {
           {/* Sleek Floating Quick-Add Button */}
           <button
             onClick={handleAddToCart}
-            className={`absolute bottom-2.5 right-2.5 z-10 w-9 h-9 rounded-full shadow-md flex items-center justify-center transition-all duration-200 active:scale-90 ${
+            className={`absolute bottom-3 right-3 z-10 w-9 h-9 rounded-full shadow-md flex items-center justify-center transition-all duration-200 active:scale-90 ${
               isAdded
                 ? "bg-emerald-600 text-white"
                 : "bg-white/95 hover:bg-slate-950 hover:text-white text-slate-800 backdrop-blur-sm opacity-90 group-hover:opacity-100 group-hover:scale-105"
@@ -74,8 +74,8 @@ export function ProductCard({ product, priority = false }: ProductCardProps) {
           </button>
         </div>
 
-        {/* Clean, Lean Product Details */}
-        <div className="space-y-1.5 px-0.5">
+        {/* Clean, Lean Product Details (Neatly Padded) */}
+        <div className="p-4 pt-3.5 space-y-2">
           {/* Micro Category & Compact Rating */}
           <div className="flex items-center justify-between text-[11px] text-slate-400">
             <span className="font-medium tracking-wide truncate max-w-[70%]">
