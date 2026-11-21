@@ -111,9 +111,10 @@ export default function ComparePage() {
                           {p.name}
                         </Link>
                       </div>
-                      <div className="flex items-baseline gap-2">
+                      <div className="flex items-baseline gap-1.5">
                         <span className="text-base font-extrabold text-slate-900">{formatINR(p.sellingPrice)}</span>
-                        <span className="text-[11px] text-slate-400 line-through">{formatINR(p.mrp)}</span>
+                        <span className="text-[10px] font-bold text-amber-700 bg-amber-50 px-1.5 py-0.5 rounded border border-amber-200">+ GST</span>
+                        <span className="text-[11px] text-slate-400 line-through ml-1">{formatINR(p.mrp)}</span>
                       </div>
                       <Link href={`/products/${p.slug}`} className="block">
                         <Button size="sm" className="w-full text-xs h-7 bg-amber-600 hover:bg-amber-700 text-white">

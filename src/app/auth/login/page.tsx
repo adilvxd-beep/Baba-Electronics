@@ -16,6 +16,7 @@ import {
 import { Button } from "@/components/ui/button";
 import { Card, CardContent, CardHeader, CardTitle, CardDescription } from "@/components/ui/card";
 import { Badge } from "@/components/ui/badge";
+import { WhatsAppIcon } from "@/components/common/WhatsAppIcon";
 
 export default function LoginPage() {
   const router = useRouter();
@@ -189,7 +190,7 @@ export default function LoginPage() {
                         : "border-slate-200 text-slate-600 hover:bg-slate-50"
                     }`}
                   >
-                    <MessageSquare className="w-4 h-4 text-emerald-600" /> WhatsApp (Fast)
+                    <WhatsAppIcon className="w-4 h-4 fill-emerald-600" /> WhatsApp (Fast)
                   </button>
                   <button
                     type="button"

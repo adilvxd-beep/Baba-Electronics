@@ -3,6 +3,7 @@
 import React, { useState } from "react";
 import Link from "next/link";
 import { Plus, Check, Star, Layers } from "lucide-react";
+import { WhatsAppIcon } from "@/components/common/WhatsAppIcon";
 import { ProductData } from "@/lib/catalog/data";
 import { formatINR } from "@/lib/utils";
 import { useCart } from "@/lib/cart/store";
@@ -61,19 +62,35 @@ export function ProductCard({ product, priority = false }: ProductCardProps) {
             )}
           </Link>
 
-          {/* Sleek Floating Quick-Add Button */}
-          <button
-            onClick={handleAddToCart}
-            className={`absolute bottom-3 right-3 z-10 w-9 h-9 rounded-full shadow-md flex items-center justify-center transition-all duration-200 active:scale-90 ${
-              isAdded
-                ? "bg-emerald-600 text-white"
-                : "bg-white/95 hover:bg-slate-950 hover:text-white text-slate-800 backdrop-blur-sm opacity-90 group-hover:opacity-100 group-hover:scale-105"
-            }`}
-            title={isAdded ? "Added to Cart" : "Quick Add to Cart"}
-            aria-label="Add to Cart"
-          >
-            {isAdded ? <Check className="w-4 h-4 text-white" /> : <Plus className="w-4 h-4" />}
-          </button>
+          {/* Sleek Floating Action Buttons: WhatsApp Direct Order + Quick Add */}
+          <div className="absolute bottom-3 right-3 z-10 flex items-center gap-1.5">
+            <a
+              href={`https://wa.me/919990333434?text=${encodeURIComponent(
+                `Hello Baba Electronics, I want to inquire about / order "${product.name}" (SKU: ${product.sku}) at ₹${product.sellingPrice} + GST.`
+              )}`}
+              target="_blank"
+              rel="noopener noreferrer"
+              onClick={(e) => e.stopPropagation()}
+              className="w-9 h-9 rounded-full bg-[#25D366] hover:bg-[#20ba5a] text-white flex items-center justify-center shadow-md transition-all duration-200 active:scale-90 hover:scale-105"
+              title="Order on WhatsApp (+91 99903 33434)"
+              aria-label="Order on WhatsApp"
+            >
+              <WhatsAppIcon className="w-5 h-5 fill-white" />
+            </a>
+
+            <button
+              onClick={handleAddToCart}
+              className={`w-9 h-9 rounded-full shadow-md flex items-center justify-center transition-all duration-200 active:scale-90 ${
+                isAdded
+                  ? "bg-emerald-600 text-white"
+                  : "bg-white/95 hover:bg-slate-950 hover:text-white text-slate-800 backdrop-blur-sm opacity-90 group-hover:opacity-100 group-hover:scale-105"
+              }`}
+              title={isAdded ? "Added to Cart" : "Quick Add to Cart"}
+              aria-label="Add to Cart"
+            >
+              {isAdded ? <Check className="w-4 h-4 text-white" /> : <Plus className="w-4 h-4" />}
+            </button>
+          </div>
         </div>
 
         {/* Clean, Lean Product Details (Neatly Padded) */}
@@ -96,13 +113,16 @@ export function ProductCard({ product, priority = false }: ProductCardProps) {
             </h3>
           </Link>
 
-          {/* Clean Price */}
-          <div className="flex items-baseline gap-2 pt-0.5">
+          {/* Clean Price with Explicit GST */}
+          <div className="flex items-baseline gap-1.5 pt-0.5">
             <span className="text-base font-extrabold text-slate-950">
               {formatINR(product.sellingPrice)}
             </span>
+            <span className="text-[10px] font-bold text-amber-700 bg-amber-50 px-1.5 py-0.5 rounded border border-amber-200">
+              + GST
+            </span>
             {product.mrp > product.sellingPrice && (
-              <del className="text-xs text-slate-400 font-normal">
+              <del className="text-xs text-slate-400 font-normal ml-1">
                 {formatINR(product.mrp)}
               </del>
             )}

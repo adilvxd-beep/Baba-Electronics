@@ -141,7 +141,7 @@ export default function QuickOrderPage() {
                       <div>
                         <span className="font-semibold text-slate-900 block truncate">{matchedProd.name}</span>
                         <span className="text-[11px] text-emerald-600 font-bold">
-                          {formatINR(matchedProd.sellingPrice)} each
+                          {formatINR(matchedProd.sellingPrice)} + GST each
                         </span>
                       </div>
                     ) : (

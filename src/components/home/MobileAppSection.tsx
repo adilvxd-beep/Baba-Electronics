@@ -16,6 +16,7 @@ import {
 } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { Badge } from "@/components/ui/badge";
+import { WhatsAppIcon } from "@/components/common/WhatsAppIcon";
 
 export function MobileAppSection() {
   const [copied, setCopied] = useState(false);
@@ -104,8 +105,8 @@ export function MobileAppSection() {
               target="_blank"
               rel="noreferrer"
             >
-              <Button size="lg" className="bg-emerald-600 hover:bg-emerald-700 text-white font-bold text-xs md:text-sm h-11 px-5 flex items-center gap-2 shadow-lg shadow-emerald-900/40">
-                <MessageSquare className="w-4 h-4" /> Order via WhatsApp
+              <Button size="lg" className="bg-[#25D366] hover:bg-[#20ba5a] text-white font-bold text-xs md:text-sm h-11 px-5 flex items-center gap-2 shadow-lg shadow-emerald-900/40">
+                <WhatsAppIcon className="w-4 h-4 fill-current" /> Order via WhatsApp
               </Button>
             </a>
 

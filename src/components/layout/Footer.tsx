@@ -2,6 +2,7 @@ import React from "react";
 import Link from "next/link";
 import Image from "next/image";
 import { Cpu, ShieldCheck, Truck, Receipt, RefreshCw, PhoneCall, Mail, MapPin } from "lucide-react";
+import { WhatsAppIcon } from "@/components/common/WhatsAppIcon";
 
 export function Footer() {
   return (
@@ -66,10 +67,15 @@ export function Footer() {
             Specialists in LED emergency exit signboards, bilingual safety signs, architectural wayfinding, and custom illuminated acrylic displays since 2001.
           </p>
           <div className="space-y-1.5 text-xs text-slate-400">
-            <p className="flex items-center gap-2">
-              <PhoneCall className="w-3.5 h-3.5 text-amber-400" />
-              <span>+91 99903 33434 (Mon-Sat 10am-7pm)</span>
-            </p>
+            <a 
+              href="https://wa.me/919990333434?text=Hello%20Baba%20Electronics%2C%20I%20need%20assistance"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="flex items-center gap-2 hover:text-[#25D366] transition-colors"
+            >
+              <WhatsAppIcon className="w-3.5 h-3.5 text-[#25D366]" />
+              <span>WhatsApp: +91 99903 33434 (Mon-Sat 10am-7pm)</span>
+            </a>
             <p className="flex items-center gap-2">
               <Mail className="w-3.5 h-3.5 text-amber-400" />
               <span>support@babaelectronics.in</span>

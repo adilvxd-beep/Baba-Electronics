@@ -23,6 +23,8 @@ import { Badge } from "@/components/ui/badge";
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 import { SAMPLE_PRODUCTS, ProductData } from "@/lib/catalog/data";
 import { formatINR } from "@/lib/utils";
+import { useCart } from "@/lib/cart/store";
+import { WhatsAppIcon } from "@/components/common/WhatsAppIcon";
 
 export default function ProductDetailPage() {
   const params = useParams();
@@ -39,6 +41,8 @@ export default function ProductDetailPage() {
   const [pincode, setPincode] = useState("");
   const [pincodeStatus, setPincodeStatus] = useState<string | null>(null);
   const [quantity, setQuantity] = useState(1);
+  const { addItem } = useCart();
+  const [addedToCart, setAddedToCart] = useState(false);
 
   if (!product) {
     return (
@@ -181,15 +185,18 @@ export default function ProductDetailPage() {
 
           {/* Pricing Box */}
           <div className="p-5 rounded-2xl bg-white border shadow-sm space-y-4">
-            <div className="flex items-baseline gap-3">
+            <div className="flex flex-wrap items-baseline gap-3">
               <span className="text-3xl font-black text-slate-950">{formatINR(calculatedUnitPrice)}</span>
+              <span className="text-xs font-bold text-amber-700 bg-amber-50 px-2.5 py-1 rounded-md border border-amber-200 uppercase tracking-wide">
+                + GST (18%)
+              </span>
               <span className="text-base text-slate-400 line-through">{formatINR(product.mrp)}</span>
               <span className="text-xs font-semibold text-emerald-600">
                 Save {Math.round(((product.mrp - calculatedUnitPrice) / product.mrp) * 100)}%
               </span>
             </div>
             <p className="text-xs text-slate-500">
-              Base price per {product.unit.toLowerCase()}. Applicable 18% GST and Shiprocket courier calculated at checkout.
+              Ex-factory price per {product.unit.toLowerCase()} (₹{calculatedUnitPrice} + 18% GST). Express Shiprocket courier calculated at checkout.
             </p>
 
             {/* Quantity Slabs (From Requirements Spec) */}
@@ -269,9 +276,32 @@ export default function ProductDetailPage() {
                 </button>
               </div>
 
-              <Button size="lg" className="flex-1 bg-amber-600 hover:bg-amber-700 text-white font-semibold shadow-md">
-                Add to Cart ({quantity} {quantity > 1 ? "units" : "unit"})
+              <Button 
+                size="lg" 
+                onClick={() => {
+                  addItem(product, selectedVariant || undefined, quantity);
+                  setAddedToCart(true);
+                  setTimeout(() => setAddedToCart(false), 2000);
+                }}
+                className={`flex-1 font-semibold shadow-md transition-all ${
+                  addedToCart ? "bg-emerald-600 hover:bg-emerald-700 text-white" : "bg-amber-600 hover:bg-amber-700 text-white"
+                }`}
+              >
+                {addedToCart ? "Added to Cart!" : `Add to Cart (${quantity} ${quantity > 1 ? "units" : "unit"})`}
               </Button>
+
+              <a
+                href={`https://wa.me/919990333434?text=${encodeURIComponent(
+                  `Hello Baba Electronics, I want to order "${product.name}" (SKU: ${activeVariantObj ? activeVariantObj.sku : product.sku}) at ₹${calculatedUnitPrice} + GST. Qty: ${quantity}`
+                )}`}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="inline-flex items-center justify-center gap-2 px-5 py-3 rounded-lg bg-[#25D366] hover:bg-[#20ba5a] text-white font-bold text-sm shadow-md transition-all active:scale-95 shrink-0"
+                title="Order directly on WhatsApp"
+              >
+                <WhatsAppIcon className="w-5 h-5 fill-current" />
+                <span>Order via WhatsApp</span>
+              </a>
             </div>
           </div>
 

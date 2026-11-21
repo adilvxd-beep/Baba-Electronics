@@ -1,13 +1,14 @@
 "use client";
 
 import React, { useState } from "react";
-import { MessageCircle, X } from "lucide-react";
+import { X } from "lucide-react";
+import { WhatsAppIcon } from "@/components/common/WhatsAppIcon";
 
 export function FloatingWhatsApp() {
   const [showTooltip, setShowTooltip] = useState(false);
   const phoneNumber = "919990333434";
   const message = encodeURIComponent(
-    "Hello Baba Electronics, I would like to inquire about LED Exit & Wayfinding Signage."
+    "Hello Baba Electronics, I would like to inquire about LED Exit & Wayfinding Signage (₹450 + GST)."
   );
   const whatsappUrl = `https://wa.me/${phoneNumber}?text=${message}`;
 
@@ -22,7 +23,7 @@ export function FloatingWhatsApp() {
           showTooltip ? "opacity-100 translate-x-0" : "opacity-0 translate-x-4 pointer-events-none"
         }`}
       >
-        <span>Chat with us on WhatsApp</span>
+        <span>Chat on WhatsApp (+91 99903 33434)</span>
         <button
           onClick={(e) => {
             e.stopPropagation();
@@ -49,8 +50,8 @@ export function FloatingWhatsApp() {
         {/* Animated Green Pulse Radar */}
         <span className="absolute inline-flex h-full w-full rounded-full bg-[#25D366] opacity-30 animate-ping group-hover:hidden" />
 
-        {/* WhatsApp Icon */}
-        <MessageCircle className="w-7 h-7 fill-white text-transparent group-hover:scale-105 transition-transform" />
+        {/* Authentic WhatsApp Logo */}
+        <WhatsAppIcon className="w-7 h-7 fill-white group-hover:scale-105 transition-transform" />
 
         {/* Online Indicator Badge */}
         <span className="absolute top-1 right-1 w-3.5 h-3.5 bg-emerald-300 border-2 border-white rounded-full" />
@@ -58,3 +59,4 @@ export function FloatingWhatsApp() {
     </aside>
   );
 }
+

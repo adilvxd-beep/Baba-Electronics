@@ -150,7 +150,7 @@ export default function WholesaleMatrixPage() {
                 <th className="p-3">SKU</th>
                 <th className="p-3">Model / Variant Name</th>
                 <th className="p-3">Category</th>
-                <th className="p-3">Base Unit Price</th>
+                <th className="p-3">Base Unit Price (+ GST)</th>
                 <th className="p-3">Volume Slab (10+)</th>
                 <th className="p-3">Volume Slab (50+)</th>
                 <th className="p-3 text-center">Batch Quantity</th>

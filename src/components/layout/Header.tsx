@@ -15,6 +15,7 @@ import {
   ShieldCheck,
   PhoneCall
 } from "lucide-react";
+import { WhatsAppIcon } from "@/components/common/WhatsAppIcon";
 import { Button } from "@/components/ui/button";
 import { Badge } from "@/components/ui/badge";
 import { useCart } from "@/lib/cart/store";
@@ -36,9 +37,14 @@ export function Header() {
             <span className="hidden sm:inline">Pan-India Express Shipping & Verified GST Invoices</span>
           </div>
           <div className="flex items-center gap-4">
-            <span className="hidden md:flex items-center gap-1 text-slate-300">
-              <PhoneCall className="w-3 h-3" /> Technical Support: +91 99903 33434
-            </span>
+            <a
+              href="https://wa.me/919990333434?text=Hello%20Baba%20Electronics%2C%20I%20would%20like%20to%20inquire%20about%20LED%20signage"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="hidden md:flex items-center gap-1.5 text-slate-300 hover:text-emerald-400 transition-colors"
+            >
+              <WhatsAppIcon className="w-3.5 h-3.5 text-[#25D366]" /> WhatsApp Support: +91 99903 33434
+            </a>
             <Link 
               href="/custom-build" 
               className="text-amber-400 hover:text-amber-300 font-medium transition-colors"
