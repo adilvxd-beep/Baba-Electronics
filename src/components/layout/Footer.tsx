@@ -63,12 +63,12 @@ export function Footer() {
             </div>
           </Link>
           <p className="text-xs leading-relaxed text-slate-400 mb-4">
-            Specialists in IoT development boards, custom electronic billboards, logo sync boards, sensors, and electronic components since 2001.
+            Specialists in LED emergency exit signboards, bilingual safety signs, architectural wayfinding, and custom illuminated acrylic displays since 2001.
           </p>
           <div className="space-y-1.5 text-xs text-slate-400">
             <p className="flex items-center gap-2">
               <PhoneCall className="w-3.5 h-3.5 text-amber-400" />
-              <span>+91 98XXX XXXXX (Mon-Sat 10am-7pm)</span>
+              <span>+91 99903 33434 (Mon-Sat 10am-7pm)</span>
             </p>
             <p className="flex items-center gap-2">
               <Mail className="w-3.5 h-3.5 text-amber-400" />
@@ -81,23 +81,23 @@ export function Footer() {
         </div>
 
         <div>
-          <h4 className="font-semibold text-white mb-3 text-sm">Catalog & Dev Kits</h4>
+          <h4 className="font-semibold text-white mb-3 text-sm">LED Signage Catalog</h4>
           <ul className="space-y-2 text-xs">
-            <li><Link href="/catalog" className="hover:text-amber-400 transition-colors">All Products Catalog</Link></li>
-            <li><Link href="/categories/esp32" className="hover:text-amber-400 transition-colors">ESP32 & IoT Dev Boards</Link></li>
-            <li><Link href="/categories/arduino" className="hover:text-amber-400 transition-colors">Arduino Compatible Boards</Link></li>
-            <li><Link href="/categories/sensors" className="hover:text-amber-400 transition-colors">Digital & Analog Sensors</Link></li>
-            <li><Link href="/categories/switches" className="hover:text-amber-400 transition-colors">Tactile & Industrial Switches</Link></li>
-            <li><Link href="/categories/starter-kits" className="hover:text-amber-400 transition-colors">Component Starter Kits</Link></li>
+            <li><Link href="/catalog" className="hover:text-amber-400 transition-colors">All Signage Catalog</Link></li>
+            <li><Link href="/categories/fire-emergency-exit" className="hover:text-amber-400 transition-colors">Fire & Emergency Exit</Link></li>
+            <li><Link href="/categories/multilingual-safety-signs" className="hover:text-amber-400 transition-colors">Bilingual NBC Signs</Link></li>
+            <li><Link href="/categories/restroom-facility-signs" className="hover:text-amber-400 transition-colors">Restroom & Facility Signs</Link></li>
+            <li><Link href="/categories/lift-stairs-wayfinding" className="hover:text-amber-400 transition-colors">Lift & Stairway Signage</Link></li>
+            <li><Link href="/categories/industrial-zone-safety" className="hover:text-amber-400 transition-colors">Industrial & Zone Safety</Link></li>
           </ul>
         </div>
 
         <div>
           <h4 className="font-semibold text-white mb-3 text-sm">B2B & Custom Engineering</h4>
           <ul className="space-y-2 text-xs">
-            <li><Link href="/custom-build" className="hover:text-amber-400 transition-colors">Custom Billboard Quotations</Link></li>
-            <li><Link href="/custom-build" className="hover:text-amber-400 transition-colors">Logo Sync Boards Spec Sheet</Link></li>
-            <li><Link href="/quick-order" className="hover:text-amber-400 transition-colors">Wholesale Bulk Matrix</Link></li>
+            <li><Link href="/custom-build" className="hover:text-amber-400 transition-colors">Custom Signage Quotations</Link></li>
+            <li><Link href="/custom-build" className="hover:text-amber-400 transition-colors">Bespoke Glow Boards</Link></li>
+            <li><Link href="/quick-order" className="hover:text-amber-400 transition-colors">Contractor Wholesale Matrix</Link></li>
             <li><Link href="/auth/login" className="hover:text-amber-400 transition-colors">Business GST Registration</Link></li>
             <li><Link href="/wholesale-matrix" className="hover:text-amber-400 transition-colors">Bulk Volume Pricing Slabs</Link></li>
           </ul>

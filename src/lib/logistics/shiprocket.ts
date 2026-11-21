@@ -172,7 +172,7 @@ export function generateThermalLabelHtml(
     <div class="address-section" style="font-size: 10px;">
       <strong>RETURN / PICKUP WAREHOUSE:</strong><br>
       Baba Electronics Central Dispatch Hub<br>
-      Industrial Area, Pune, Maharashtra - 411001 | Ph: +91 98XXX XXXXX
+      Industrial Area, Pune, Maharashtra - 411001 | Ph: +91 99903 33434
     </div>
 
     <div style="margin-top: 6px; font-size: 9px;">

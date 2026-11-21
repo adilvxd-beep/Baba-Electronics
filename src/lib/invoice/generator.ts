@@ -65,7 +65,7 @@ export function generateGSTInvoiceHtml(inv: InvoiceData): string {
           25+ Years Legacy in IoT Hardware & Custom Electronics<br>
           Registered Office: Pune / Mumbai Industrial Hub, Maharashtra, India<br>
           <strong>GSTIN:</strong> 27AAAAA0000A1Z5 | <strong>State:</strong> Maharashtra (Code: 27)<br>
-          Support: contact@babaelectronics.in | +91 98XXX XXXXX
+          Support: contact@babaelectronics.in | +91 99903 33434
         </div>
       </div>
       <div>

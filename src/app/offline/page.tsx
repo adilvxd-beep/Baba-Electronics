@@ -23,7 +23,7 @@ export default function OfflinePage() {
         <div className="flex items-center gap-2 font-bold text-slate-900">
           <PhoneCall className="w-4 h-4 text-amber-600" /> Need Immediate Assistance?
         </div>
-        <p>Call Baba Electronics dispatch desk directly at <strong>+91 98XXX XXXXX</strong> for urgent workshop component orders.</p>
+        <p>Call Baba Electronics dispatch desk directly at <strong>+91 99903 33434</strong> for urgent workshop component orders.</p>
       </div>
 
       <div className="flex flex-col sm:flex-row gap-3 justify-center">

@@ -37,7 +37,7 @@ export function Header() {
           </div>
           <div className="flex items-center gap-4">
             <span className="hidden md:flex items-center gap-1 text-slate-300">
-              <PhoneCall className="w-3 h-3" /> Technical Support: +91 98XXX XXXXX
+              <PhoneCall className="w-3 h-3" /> Technical Support: +91 99903 33434
             </span>
             <Link 
               href="/custom-build" 

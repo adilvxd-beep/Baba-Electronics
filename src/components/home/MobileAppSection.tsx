@@ -100,7 +100,7 @@ export function MobileAppSection() {
           {/* Action CTAs */}
           <div className="flex flex-wrap gap-3 pt-3">
             <a
-              href="https://wa.me/919800000000?text=Hi%20Baba%20Electronics%2C%20I%20would%20like%20to%20place%20an%20order"
+              href="https://wa.me/919990333434?text=Hi%20Baba%20Electronics%2C%20I%20would%20like%20to%20place%20an%20order%20for%20LED%20signage"
               target="_blank"
               rel="noreferrer"
             >

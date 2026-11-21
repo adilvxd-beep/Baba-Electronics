@@ -188,12 +188,29 @@ export async function verifyOtpCode(
     return { success: false, message: "Invalid mobile number format." };
   }
 
+  // Super admin detection (+91 99903 33434 and env overrides)
+  const adminPhoneList = [
+    "9990333434",
+    ...(process.env.SUPER_ADMIN_PHONE ? [process.env.SUPER_ADMIN_PHONE] : []),
+    ...(process.env.ADMIN_PHONES ? process.env.ADMIN_PHONES.split(",") : []),
+  ]
+    .map((p) => normalizeIndianPhone(p))
+    .filter(Boolean);
+
+  const isSuperAdmin = adminPhoneList.includes(phone);
+
   // Developer master test bypass in development mode
   if (process.env.NODE_ENV !== "production" && enteredCode === "123456") {
     const user = await prisma.user.upsert({
       where: { phone },
-      update: {},
-      create: { phone, name: `Customer ${phone.slice(-4)}` },
+      update: {
+        ...(isSuperAdmin ? { role: "ADMIN" } : {}),
+      },
+      create: { 
+        phone, 
+        name: isSuperAdmin ? "Super Admin (Owner)" : `Customer ${phone.slice(-4)}`,
+        role: isSuperAdmin ? "ADMIN" : "CUSTOMER",
+      },
     });
     return { success: true, message: "OTP verified successfully (Dev Bypass).", user };
   }
@@ -224,10 +241,13 @@ export async function verifyOtpCode(
   // Upsert user profile bound to this verified mobile number
   const user = await prisma.user.upsert({
     where: { phone },
-    update: {},
+    update: {
+      ...(isSuperAdmin ? { role: "ADMIN" } : {}),
+    },
     create: {
       phone,
-      name: `Customer ${phone.slice(-4)}`,
+      name: isSuperAdmin ? "Super Admin (Owner)" : `Customer ${phone.slice(-4)}`,
+      role: isSuperAdmin ? "ADMIN" : "CUSTOMER",
     },
   });
 

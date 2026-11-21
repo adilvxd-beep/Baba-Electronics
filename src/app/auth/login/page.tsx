@@ -87,7 +87,11 @@ export default function LoginPage() {
       } else {
         setSuccessMessage("Authentication successful! Redirecting...");
         setTimeout(() => {
-          router.push("/");
+          if (data.user?.role === "ADMIN") {
+            router.push("/admin/orders");
+          } else {
+            router.push("/");
+          }
           router.refresh();
         }, 800);
       }
@@ -164,7 +168,7 @@ export default function LoginPage() {
                     type="tel"
                     required
                     maxLength={10}
-                    placeholder="98765 43210"
+                    placeholder="99903 33434"
                     value={phone}
                     onChange={(e) => setPhone(e.target.value.replace(/\D/g, ""))}
                     className="w-full rounded-lg border border-slate-300 bg-white pl-12 pr-4 py-2 text-sm font-medium tracking-wide focus:border-amber-600 focus:outline-none focus:ring-1 focus:ring-amber-500"

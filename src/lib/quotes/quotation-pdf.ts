@@ -31,7 +31,7 @@ export function generateFormalQuotationHtml(quote: CustomQuoteRecord): string {
         <div class="subhead">
           Custom Hardware Engineering & Signage Division<br>
           Industrial Hub, Pune, Maharashtra | GSTIN: 27AAAAA0000A1Z5<br>
-          Engineering Desk: contact@babaelectronics.in | +91 98XXX XXXXX
+          Engineering Desk: contact@babaelectronics.in | +91 99903 33434
         </div>
       </div>
       <div>
