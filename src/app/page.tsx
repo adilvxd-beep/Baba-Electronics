@@ -36,6 +36,7 @@ export default function HomePage() {
           categorySubtitle="Precision temperature, gas, motion, and environmental modules"
           categoryFilter="Sensors"
           categorySlug="sensors"
+          subcategories={["Temperature", "Gas & Air", "Motion", "Distance"]}
         />
 
         {/* 6. Featured Category 2: IoT & Dev Kits */}
@@ -44,6 +45,7 @@ export default function HomePage() {
           categorySubtitle="ESP32 dual-core Wi-Fi + BLE, Arduino compatibles, and dev kits"
           categoryFilter="IoT"
           categorySlug="esp32"
+          subcategories={["ESP32", "Arduino", "Kits", "Wireless"]}
         />
 
         {/* 7. Mobile App & WhatsApp Quick Ordering Section */}

@@ -32,16 +32,17 @@ const TESTIMONIALS = [
 
 export function ClientTestimonials() {
   return (
-    <section className="space-y-4">
-      <div className="flex items-center justify-between pb-2 border-b border-slate-200">
-        <div>
-          <h2 className="text-xl md:text-2xl font-extrabold text-slate-900 tracking-tight">
+    <section className="space-y-6">
+      {/* Linear Border Section Header (Robosap / Martfury Style) */}
+      <div className="border-b-2 border-slate-200 pb-3 flex flex-col md:flex-row md:items-end justify-between gap-2">
+        <div className="relative">
+          <h2 className="text-xl md:text-2xl font-bold text-slate-900 tracking-tight pb-3 -mb-[14px] border-b-2 border-amber-500 inline-block">
             Trusted by Engineers, Colleges & Makers
           </h2>
-          <p className="text-xs md:text-sm text-slate-500">
-            Real feedback from 25+ years of electronics distribution & custom hardware manufacturing
-          </p>
         </div>
+        <p className="text-xs md:text-sm text-slate-500 pb-1">
+          25+ years of verified industrial supply & precision hardware
+        </p>
       </div>
 
       <div className="grid grid-cols-1 md:grid-cols-3 gap-5">

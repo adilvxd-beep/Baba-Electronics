@@ -60,16 +60,20 @@ const CATEGORIES = [
 
 export function PopularCategories() {
   return (
-    <section className="space-y-5">
-      <div className="flex items-center justify-between">
-        <h2 className="text-xl sm:text-2xl font-bold text-slate-900 tracking-tight">
-          Explore by Category
-        </h2>
+    <section className="space-y-6">
+      {/* Linear Border Section Header (Robosap / Martfury Style) */}
+      <div className="border-b-2 border-slate-200 pb-3 flex items-end justify-between">
+        <div className="relative">
+          <h2 className="text-xl sm:text-2xl font-bold text-slate-900 tracking-tight pb-3 -mb-[14px] border-b-2 border-amber-500 inline-block">
+            Explore by Category
+          </h2>
+        </div>
         <Link 
           href="/catalog" 
-          className="text-xs sm:text-sm font-semibold text-amber-600 hover:text-amber-700 hover:underline flex items-center gap-1"
+          className="text-xs sm:text-sm font-semibold text-amber-600 hover:text-amber-700 flex items-center gap-1 group"
         >
-          View All <ArrowRight className="w-4 h-4" />
+          <span>View All Categories</span>
+          <ArrowRight className="w-4 h-4 transition-transform group-hover:translate-x-0.5" />
         </Link>
       </div>
 

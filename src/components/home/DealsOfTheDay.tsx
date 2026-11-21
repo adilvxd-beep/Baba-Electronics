@@ -41,37 +41,50 @@ export function DealsOfTheDay() {
 
   return (
     <section className="space-y-6">
-      {/* Sleek, Lean Header */}
-      <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-4">
-        <div className="flex items-center gap-3">
-          <h2 className="text-xl sm:text-2xl font-bold text-slate-900 tracking-tight">
-            Hot Deals & Fast Movers
-          </h2>
+      {/* Linear Border Section Header (Robosap / Martfury Style) */}
+      <div className="border-b-2 border-slate-200 pb-3 flex flex-col md:flex-row md:items-end justify-between gap-4">
+        <div className="flex flex-wrap items-center gap-3">
+          <div className="relative">
+            <h2 className="text-xl sm:text-2xl font-bold text-slate-900 tracking-tight pb-3 -mb-[14px] border-b-2 border-amber-500 inline-block">
+              Hot Deals & Fast Movers
+            </h2>
+          </div>
 
-          {/* Minimalist Countdown Badge */}
-          <div className="flex items-center gap-1.5 px-2.5 py-1 rounded-full bg-slate-100 text-slate-600 text-xs">
-            <Clock className="w-3.5 h-3.5 text-amber-600" />
+          {/* Minimalist Countdown Badge (Robosap style) */}
+          <div className="flex items-center gap-1.5 px-3 py-1 rounded-full bg-amber-50 text-amber-900 border border-amber-200/80 text-xs font-semibold">
+            <Clock className="w-3.5 h-3.5 text-amber-600 animate-pulse" />
+            <span className="text-[11px] text-amber-700 font-medium uppercase tracking-wider">Ends In:</span>
             <span className="font-mono font-bold text-slate-900">
               {String(timeLeft.hours).padStart(2, "0")}h : {String(timeLeft.minutes).padStart(2, "0")}m : {String(timeLeft.seconds).padStart(2, "0")}s
             </span>
           </div>
         </div>
 
-        {/* Modern Segmented Pill Tabs */}
-        <div className="flex items-center gap-1 bg-slate-100/80 p-1 rounded-full overflow-x-auto">
-          {tabs.map((tab) => (
-            <button
-              key={tab.id}
-              onClick={() => setActiveTab(tab.id)}
-              className={`px-3.5 py-1.5 rounded-full text-xs font-semibold whitespace-nowrap transition-all duration-200 ${
-                activeTab === tab.id
-                  ? "bg-white text-slate-900 shadow-sm"
-                  : "text-slate-500 hover:text-slate-800"
-              }`}
-            >
-              {tab.label}
-            </button>
-          ))}
+        {/* Inline Category Tabs & View All along the divider */}
+        <div className="flex items-center justify-between md:justify-end gap-3 sm:gap-5 overflow-x-auto">
+          <div className="flex items-center gap-1 bg-slate-100/90 p-1 rounded-full">
+            {tabs.map((tab) => (
+              <button
+                key={tab.id}
+                onClick={() => setActiveTab(tab.id)}
+                className={`px-3 py-1 rounded-full text-xs font-semibold whitespace-nowrap transition-all duration-200 ${
+                  activeTab === tab.id
+                    ? "bg-white text-slate-900 shadow-sm"
+                    : "text-slate-500 hover:text-slate-800"
+                }`}
+              >
+                {tab.label}
+              </button>
+            ))}
+          </div>
+
+          <Link
+            href="/catalog"
+            className="text-xs sm:text-sm font-semibold text-amber-600 hover:text-amber-700 flex items-center gap-1 shrink-0 group ml-2"
+          >
+            <span>View All</span>
+            <ArrowRight className="w-4 h-4 transition-transform group-hover:translate-x-0.5" />
+          </Link>
         </div>
       </div>
 
