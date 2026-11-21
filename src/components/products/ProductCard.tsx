@@ -36,26 +36,28 @@ export function ProductCard({ product, priority = false }: ProductCardProps) {
   return (
     <div className="group relative flex flex-col justify-between bg-white rounded-2xl overflow-hidden border border-transparent hover:border-slate-200 hover:shadow-xl hover:-translate-y-1 transition-all duration-300">
       <div>
-        {/* Full-Width Edge-to-Edge Product Thumbnail (Flush with Top & Sides) */}
-        <div className="relative aspect-square w-full bg-slate-50/80 overflow-hidden flex items-center justify-center">
+        {/* Full Bleed Product Image (100% Width & Height, 0 Gap/Padding) */}
+        <div className="relative aspect-square w-full bg-slate-100 overflow-hidden">
           {/* Minimalist Micro Discount Pill */}
           {discountPercent > 0 && (
-            <span className="absolute top-3 left-3 z-10 bg-amber-500/95 backdrop-blur-sm text-slate-950 font-extrabold text-[10px] px-2 py-0.5 rounded-full shadow-sm tracking-tight">
+            <span className="absolute top-3 left-3 z-10 bg-amber-500/95 backdrop-blur-sm text-slate-950 font-extrabold text-[10px] px-2.5 py-0.5 rounded-full shadow-md tracking-tight">
               {discountPercent}% OFF
             </span>
           )}
 
-          {/* Product Image - Maximum Width */}
-          <Link href={`/products/${product.slug}`} className="w-full h-full flex items-center justify-center p-2 sm:p-3">
+          {/* Full Width & Height Anchor Tag - Zero Gaps */}
+          <Link href={`/products/${product.slug}`} className="block w-full h-full">
             {product.images && product.images[0] ? (
               <img
                 src={product.images[0]}
                 alt={product.name}
                 loading={priority ? "eager" : "lazy"}
-                className="w-full h-full object-contain mix-blend-multiply group-hover:scale-105 transition-transform duration-300"
+                className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500 ease-out"
               />
             ) : (
-              <Layers className="w-10 h-10 text-slate-300" />
+              <div className="w-full h-full flex items-center justify-center bg-slate-100">
+                <Layers className="w-12 h-12 text-slate-300" />
+              </div>
             )}
           </Link>
 
