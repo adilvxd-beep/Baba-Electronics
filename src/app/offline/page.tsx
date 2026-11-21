@@ -21,7 +21,7 @@ export default function OfflinePage() {
 
       <div className="p-4 rounded-xl border bg-white text-xs text-slate-600 space-y-2 text-left">
         <div className="flex items-center gap-2 font-bold text-slate-900">
-          <PhoneCall className="w-4 h-4 text-blue-600" /> Need Immediate Assistance?
+          <PhoneCall className="w-4 h-4 text-amber-600" /> Need Immediate Assistance?
         </div>
         <p>Call Baba Electronics dispatch desk directly at <strong>+91 98XXX XXXXX</strong> for urgent workshop component orders.</p>
       </div>
@@ -30,7 +30,7 @@ export default function OfflinePage() {
         <Button
           onClick={() => window.location.reload()}
           size="sm"
-          className="bg-blue-600 hover:bg-blue-700 text-white text-xs flex items-center justify-center gap-1.5"
+          className="bg-amber-600 hover:bg-amber-700 text-white text-xs flex items-center justify-center gap-1.5"
         >
           <RefreshCw className="w-3.5 h-3.5" /> Retry Connection
         </Button>

@@ -82,11 +82,11 @@ export default function ProductDetailPage() {
     <div className="container mx-auto px-4 py-8 space-y-10">
       {/* Breadcrumb Navigation */}
       <nav className="flex items-center gap-2 text-xs text-slate-500">
-        <Link href="/" className="hover:text-blue-600">Home</Link>
+        <Link href="/" className="hover:text-amber-600 transition-colors">Home</Link>
         <span>/</span>
-        <Link href="/catalog" className="hover:text-blue-600">Catalog</Link>
+        <Link href="/catalog" className="hover:text-amber-600 transition-colors">Catalog</Link>
         <span>/</span>
-        <span className="hover:text-blue-600">{product.category}</span>
+        <span className="hover:text-amber-600 transition-colors">{product.category}</span>
         <span>/</span>
         <span className="text-slate-800 font-medium truncate max-w-xs">{product.name}</span>
       </nav>
@@ -103,7 +103,7 @@ export default function ProductDetailPage() {
             />
             <div className="absolute top-3 left-3 flex flex-col gap-1.5">
               {product.sourceType === "MANUFACTURED" ? (
-                <Badge className="bg-blue-600 text-white text-[11px]">Manufactured by Baba Electronics</Badge>
+                <Badge className="bg-amber-600 text-white text-[11px]">Manufactured by Baba Electronics</Badge>
               ) : (
                 <Badge variant="secondary" className="bg-slate-900 text-white text-[11px]">Traded / Certified</Badge>
               )}
@@ -118,7 +118,7 @@ export default function ProductDetailPage() {
                   key={i}
                   onClick={() => setSelectedImageIndex(i)}
                   className={`w-16 h-16 rounded-lg overflow-hidden border-2 transition-all ${
-                    selectedImageIndex === i ? "border-blue-600 shadow" : "border-slate-200 opacity-70"
+                    selectedImageIndex === i ? "border-amber-600 shadow" : "border-slate-200 opacity-70"
                   }`}
                 >
                   <img src={img} alt={`thumb-${i}`} className="w-full h-full object-cover" />
@@ -129,16 +129,16 @@ export default function ProductDetailPage() {
 
           {/* Datasheet & Documentation Card */}
           {product.datasheetUrl && (
-            <div className="p-4 rounded-xl bg-blue-50/70 border border-blue-200 flex items-center justify-between text-xs">
+            <div className="p-4 rounded-xl bg-amber-50/70 border border-amber-200 flex items-center justify-between text-xs">
               <div className="flex items-center gap-2.5">
-                <FileText className="w-5 h-5 text-blue-600" />
+                <FileText className="w-5 h-5 text-amber-600" />
                 <div>
                   <p className="font-semibold text-slate-900">Technical Datasheet (PDF)</p>
                   <p className="text-slate-500">Pinout diagrams, schematics & specs</p>
                 </div>
               </div>
               <a href={product.datasheetUrl} target="_blank" rel="noreferrer">
-                <Button size="sm" variant="outline" className="h-8 text-xs bg-white text-blue-700 border-blue-300">
+                <Button size="sm" variant="outline" className="h-8 text-xs bg-white text-amber-800 border-amber-300 hover:bg-amber-100">
                   <Download className="w-3.5 h-3.5 mr-1" /> Download
                 </Button>
               </a>
@@ -194,20 +194,20 @@ export default function ProductDetailPage() {
 
             {/* Quantity Slabs (From Requirements Spec) */}
             {product.quantityDiscounts.length > 0 && (
-              <div className="p-3 rounded-lg bg-blue-50/60 border border-blue-100 space-y-2">
-                <div className="flex items-center gap-1.5 text-xs font-bold text-blue-900">
-                  <TrendingDown className="w-4 h-4 text-blue-600" /> Bulk Quantity Discounts (Applied in Cart):
+              <div className="p-3 rounded-lg bg-amber-50/60 border border-amber-200/60 space-y-2">
+                <div className="flex items-center gap-1.5 text-xs font-bold text-amber-950">
+                  <TrendingDown className="w-4 h-4 text-amber-600" /> Bulk Quantity Discounts (Applied in Cart):
                 </div>
                 <div className="grid grid-cols-2 sm:grid-cols-3 gap-2 text-xs">
                   {product.quantityDiscounts.map((slab, i) => (
                     <div 
                       key={i} 
                       className={`p-2 rounded bg-white border text-center ${
-                        quantity >= slab.minQuantity ? "border-blue-600 ring-1 ring-blue-600 font-bold text-blue-900" : "text-slate-600"
+                        quantity >= slab.minQuantity ? "border-amber-600 ring-1 ring-amber-600 font-bold text-amber-950" : "text-slate-600"
                       }`}
                     >
                       <span className="block text-[11px] font-medium text-slate-500">{slab.minQuantity}+ Units</span>
-                      <span className="text-sm font-extrabold text-blue-700">{formatINR(slab.discountedPrice)}</span>
+                      <span className="text-sm font-extrabold text-amber-700">{formatINR(slab.discountedPrice)}</span>
                     </div>
                   ))}
                 </div>
@@ -228,13 +228,13 @@ export default function ProductDetailPage() {
                       onClick={() => setSelectedVariant(v.id)}
                       className={`p-3 rounded-xl border text-left transition-all ${
                         selectedVariant === v.id
-                          ? "border-blue-600 bg-blue-50/50 ring-1 ring-blue-600 text-slate-900 font-semibold"
+                          ? "border-amber-600 bg-amber-50/50 ring-1 ring-amber-600 text-slate-900 font-semibold"
                           : "border-slate-200 hover:border-slate-300 text-slate-700"
                       }`}
                     >
                       <div className="flex justify-between items-center text-xs">
                         <span>{v.name}</span>
-                        <span className="font-bold text-blue-700">{formatINR(v.price)}</span>
+                        <span className="font-bold text-amber-700">{formatINR(v.price)}</span>
                       </div>
                       <span className="text-[10px] text-slate-400 block pt-1 font-mono">{v.sku}</span>
                     </button>
@@ -269,7 +269,7 @@ export default function ProductDetailPage() {
                 </button>
               </div>
 
-              <Button size="lg" className="flex-1 bg-blue-600 hover:bg-blue-700 text-white font-semibold shadow-md">
+              <Button size="lg" className="flex-1 bg-amber-600 hover:bg-amber-700 text-white font-semibold shadow-md">
                 Add to Cart ({quantity} {quantity > 1 ? "units" : "unit"})
               </Button>
             </div>
@@ -278,7 +278,7 @@ export default function ProductDetailPage() {
           {/* Pincode Serviceability Check Widget */}
           <div className="p-4 rounded-xl border bg-white space-y-2">
             <div className="flex items-center gap-1.5 text-xs font-semibold text-slate-800">
-              <MapPin className="w-4 h-4 text-blue-600" /> Check Pan-India Delivery & Estimated Delivery Date:
+              <MapPin className="w-4 h-4 text-amber-600" /> Check Pan-India Delivery & Estimated Delivery Date:
             </div>
             <form onSubmit={handlePincodeCheck} className="flex gap-2">
               <input
@@ -287,7 +287,7 @@ export default function ProductDetailPage() {
                 placeholder="Enter 6-digit Pincode"
                 value={pincode}
                 onChange={(e) => setPincode(e.target.value.replace(/\D/g, ""))}
-                className="w-48 rounded-lg border border-slate-300 px-3 py-1.5 text-xs focus:outline-none focus:ring-1 focus:ring-blue-600"
+                className="w-48 rounded-lg border border-slate-300 px-3 py-1.5 text-xs focus:outline-none focus:ring-1 focus:ring-amber-500"
               />
               <Button type="submit" variant="outline" size="sm" className="text-xs">
                 Check

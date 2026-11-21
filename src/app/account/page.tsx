@@ -56,13 +56,13 @@ export default function AccountPage() {
       {/* Account Profile Bar */}
       <div className="p-6 rounded-2xl bg-slate-900 text-white flex flex-col sm:flex-row sm:items-center justify-between gap-4 shadow-xl">
         <div className="flex items-center gap-4">
-          <div className="w-14 h-14 rounded-2xl bg-blue-600 flex items-center justify-center text-white shadow-md">
+          <div className="w-14 h-14 rounded-2xl bg-amber-600 flex items-center justify-center text-white shadow-md">
             <User className="w-7 h-7" />
           </div>
           <div>
             <div className="flex items-center gap-2">
               <h1 className="text-xl font-bold">Rohan Kulkarni</h1>
-              <Badge variant="outline" className="border-blue-400 text-blue-300 text-[10px]">
+              <Badge variant="outline" className="border-amber-400 text-blue-300 text-[10px]">
                 Verified Mobile
               </Badge>
             </div>
@@ -98,7 +98,7 @@ export default function AccountPage() {
         <button
           onClick={() => setActiveTab("ORDERS")}
           className={`pb-3 px-4 border-b-2 transition-all ${
-            activeTab === "ORDERS" ? "border-blue-600 text-blue-600" : "border-transparent text-slate-500 hover:text-slate-800"
+            activeTab === "ORDERS" ? "border-amber-600 text-amber-600" : "border-transparent text-slate-500 hover:text-slate-800"
           }`}
         >
           Order History & Tracking ({orders.length})
@@ -106,7 +106,7 @@ export default function AccountPage() {
         <button
           onClick={() => setActiveTab("ADDRESSES")}
           className={`pb-3 px-4 border-b-2 transition-all ${
-            activeTab === "ADDRESSES" ? "border-blue-600 text-blue-600" : "border-transparent text-slate-500 hover:text-slate-800"
+            activeTab === "ADDRESSES" ? "border-amber-600 text-amber-600" : "border-transparent text-slate-500 hover:text-slate-800"
           }`}
         >
           Saved GSTIN & Addresses
@@ -123,7 +123,7 @@ export default function AccountPage() {
                     <span className="font-mono font-extrabold text-slate-900 text-sm">{ord.orderNumber}</span>
                     {ord.status === "CONFIRMED" && <Badge variant="warning" className="text-[10px]">Confirmed</Badge>}
                     {ord.status === "PARTIALLY_SHIPPED" && <Badge className="text-[10px] bg-purple-600">Partially Shipped</Badge>}
-                    {ord.status === "SHIPPED" && <Badge className="text-[10px] bg-blue-600">Shipped</Badge>}
+                    {ord.status === "SHIPPED" && <Badge className="text-[10px] bg-amber-600">Shipped</Badge>}
                     {ord.status === "DELIVERED" && <Badge variant="success" className="text-[10px]">Delivered</Badge>}
                     {ord.status === "CANCELLED" && <Badge variant="destructive" className="text-[10px]">Cancelled</Badge>}
                   </div>
@@ -184,12 +184,12 @@ export default function AccountPage() {
 
                 {/* Shipments & Tracking Links */}
                 {ord.shipments.length > 0 && (
-                  <div className="p-3 rounded-lg bg-blue-50/60 border border-blue-100 space-y-2">
-                    <span className="font-bold text-blue-900 block">Courier Shipments & Consignments:</span>
+                  <div className="p-3 rounded-lg bg-amber-50/60 border border-amber-100 space-y-2">
+                    <span className="font-bold text-amber-900 block">Courier Shipments & Consignments:</span>
                     {ord.shipments.map((s) => (
                       <div key={s.id} className="flex flex-col sm:flex-row sm:items-center justify-between gap-2 text-xs bg-white p-2.5 rounded border">
                         <div className="flex items-center gap-2">
-                          <Truck className="w-4 h-4 text-blue-600" />
+                          <Truck className="w-4 h-4 text-amber-600" />
                           <div>
                             <span className="font-semibold text-slate-900">{s.courierName}</span>
                             <span className="text-slate-400 font-mono ml-2">AWB: {s.awbCode}</span>
@@ -199,7 +199,7 @@ export default function AccountPage() {
                           href={s.trackingUrl}
                           target="_blank"
                           rel="noreferrer"
-                          className="text-blue-600 font-semibold hover:underline flex items-center gap-1"
+                          className="text-amber-600 font-semibold hover:underline flex items-center gap-1"
                         >
                           Live Tracking <ExternalLink className="w-3 h-3" />
                         </a>
@@ -211,7 +211,7 @@ export default function AccountPage() {
                 <div className="flex justify-between items-center pt-2 text-xs font-semibold text-slate-700">
                   <span>Grand Total: <strong className="text-slate-950 font-extrabold text-sm">{formatINR(ord.grandTotal)}</strong></span>
                   <Link href="/catalog">
-                    <Button size="sm" variant="ghost" className="h-7 text-xs text-blue-600 hover:text-blue-800">
+                    <Button size="sm" variant="ghost" className="h-7 text-xs text-amber-600 hover:text-amber-800">
                       <RefreshCw className="w-3 h-3 mr-1" /> Reorder Items
                     </Button>
                   </Link>
@@ -226,7 +226,7 @@ export default function AccountPage() {
         <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
           <Card className="p-5 space-y-3 border">
             <div className="flex items-center gap-2 text-sm font-bold text-slate-900">
-              <Building2 className="w-4 h-4 text-blue-600" /> Default Business & GSTIN Profile
+              <Building2 className="w-4 h-4 text-amber-600" /> Default Business & GSTIN Profile
             </div>
             <div className="text-xs text-slate-600 space-y-1">
               <p><strong>Firm:</strong> Kulkarni Robotics Pvt Ltd</p>
@@ -237,7 +237,7 @@ export default function AccountPage() {
 
           <Card className="p-5 space-y-3 border">
             <div className="flex items-center gap-2 text-sm font-bold text-slate-900">
-              <MapPin className="w-4 h-4 text-blue-600" /> Primary Shipping Address
+              <MapPin className="w-4 h-4 text-amber-600" /> Primary Shipping Address
             </div>
             <div className="text-xs text-slate-600 space-y-1">
               <p>Flat 402, Shivajinagar</p>

@@ -171,7 +171,7 @@ export default function CheckoutPage() {
   return (
     <div className="container mx-auto px-4 py-8 space-y-8">
       {/* 15-Minute Reservation Banner */}
-      <div className="p-3.5 rounded-xl bg-blue-900 text-white flex flex-col sm:flex-row items-center justify-between gap-3 text-xs shadow-md">
+      <div className="p-3.5 rounded-xl bg-slate-900 text-white flex flex-col sm:flex-row items-center justify-between gap-3 text-xs shadow-md border border-slate-800">
         <div className="flex items-center gap-2 font-medium">
           <Clock className="w-4 h-4 text-amber-400 animate-pulse" />
           <span>
@@ -179,7 +179,7 @@ export default function CheckoutPage() {
             <strong className="font-mono text-sm text-amber-300">{formatTimer(reservationSeconds)}</strong>
           </span>
         </div>
-        <span className="text-[11px] text-blue-200">Zero overselling protection active</span>
+        <span className="text-[11px] text-amber-200">Zero overselling protection active</span>
       </div>
 
       <div className="flex items-center justify-between pb-4 border-b">
@@ -187,7 +187,7 @@ export default function CheckoutPage() {
           <h1 className="text-2xl sm:text-3xl font-extrabold text-slate-900">Single-Page Checkout</h1>
           <p className="text-xs text-slate-500">Pan-India express delivery · Instant GST Tax Invoice</p>
         </div>
-        <Link href="/cart" className="text-xs font-semibold text-blue-600 hover:underline flex items-center gap-1">
+        <Link href="/cart" className="text-xs font-semibold text-amber-600 hover:underline flex items-center gap-1">
           <ArrowLeft className="w-3.5 h-3.5" /> Back to Cart
         </Link>
       </div>
@@ -206,7 +206,7 @@ export default function CheckoutPage() {
           <Card className="border shadow-sm">
             <CardHeader className="p-5 pb-3 border-b bg-slate-50/50">
               <CardTitle className="text-sm font-bold text-slate-900 flex items-center gap-2">
-                <Phone className="w-4 h-4 text-blue-600" /> 1. Contact & Mobile Verification
+                <Phone className="w-4 h-4 text-amber-600" /> 1. Contact & Mobile Verification
               </CardTitle>
               <CardDescription className="text-xs text-slate-500">
                 Tracking links and PDF invoices will be sent to this WhatsApp / mobile number.
@@ -221,7 +221,7 @@ export default function CheckoutPage() {
                   placeholder="e.g. Ramesh Patel"
                   value={fullName}
                   onChange={(e) => setFullName(e.target.value)}
-                  className="w-full rounded-lg border border-slate-300 p-2.5 text-xs focus:ring-1 focus:ring-blue-600 focus:outline-none"
+                  className="w-full rounded-lg border border-slate-300 p-2.5 text-xs focus:ring-1 focus:ring-amber-500 focus:outline-none"
                 />
               </div>
 
@@ -236,7 +236,7 @@ export default function CheckoutPage() {
                     placeholder="98765 43210"
                     value={phone}
                     onChange={(e) => setPhone(e.target.value.replace(/\D/g, ""))}
-                    className="w-full rounded-lg border border-slate-300 pl-11 pr-3 py-2.5 text-xs font-mono font-medium focus:ring-1 focus:ring-blue-600 focus:outline-none"
+                    className="w-full rounded-lg border border-slate-300 pl-11 pr-3 py-2.5 text-xs font-mono font-medium focus:ring-1 focus:ring-amber-500 focus:outline-none"
                   />
                 </div>
               </div>
@@ -248,7 +248,7 @@ export default function CheckoutPage() {
                   placeholder="ramesh@example.com"
                   value={email}
                   onChange={(e) => setEmail(e.target.value)}
-                  className="w-full rounded-lg border border-slate-300 p-2.5 text-xs focus:ring-1 focus:ring-blue-600 focus:outline-none"
+                  className="w-full rounded-lg border border-slate-300 p-2.5 text-xs focus:ring-1 focus:ring-amber-500 focus:outline-none"
                 />
               </div>
             </CardContent>
@@ -258,7 +258,7 @@ export default function CheckoutPage() {
           <Card className="border shadow-sm">
             <CardHeader className="p-5 pb-3 border-b bg-slate-50/50">
               <CardTitle className="text-sm font-bold text-slate-900 flex items-center gap-2">
-                <MapPin className="w-4 h-4 text-blue-600" /> 2. Shipping Address & Tax Location
+                <MapPin className="w-4 h-4 text-amber-600" /> 2. Shipping Address & Tax Location
               </CardTitle>
               <CardDescription className="text-xs text-slate-500">
                 Destination state determines CGST/SGST vs IGST tax bifurcation automatically.
@@ -273,7 +273,7 @@ export default function CheckoutPage() {
                   placeholder="Plot No., Industrial Area, Road Name"
                   value={street}
                   onChange={(e) => setStreet(e.target.value)}
-                  className="w-full rounded-lg border border-slate-300 p-2.5 text-xs focus:ring-1 focus:ring-blue-600 focus:outline-none"
+                  className="w-full rounded-lg border border-slate-300 p-2.5 text-xs focus:ring-1 focus:ring-amber-500 focus:outline-none"
                 />
               </div>
 
@@ -285,7 +285,7 @@ export default function CheckoutPage() {
                   placeholder="e.g. Pune, Ahmedabad, Bengaluru"
                   value={city}
                   onChange={(e) => setCity(e.target.value)}
-                  className="w-full rounded-lg border border-slate-300 p-2.5 text-xs focus:ring-1 focus:ring-blue-600 focus:outline-none"
+                  className="w-full rounded-lg border border-slate-300 p-2.5 text-xs focus:ring-1 focus:ring-amber-500 focus:outline-none"
                 />
               </div>
 
@@ -294,7 +294,7 @@ export default function CheckoutPage() {
                 <select
                   value={stateCode}
                   onChange={(e) => setStateCode(e.target.value)}
-                  className="w-full rounded-lg border border-slate-300 p-2.5 text-xs font-medium bg-white focus:ring-1 focus:ring-blue-600 focus:outline-none"
+                  className="w-full rounded-lg border border-slate-300 p-2.5 text-xs font-medium bg-white focus:ring-1 focus:ring-amber-500 focus:outline-none"
                 >
                   {Object.entries(INDIAN_STATES).map(([code, name]) => (
                     <option key={code} value={code}>
@@ -313,7 +313,7 @@ export default function CheckoutPage() {
                   placeholder="6-digit PIN code"
                   value={pincode}
                   onChange={(e) => setPincode(e.target.value.replace(/\D/g, ""))}
-                  className="w-full rounded-lg border border-slate-300 p-2.5 text-xs font-mono font-medium focus:ring-1 focus:ring-blue-600 focus:outline-none"
+                  className="w-full rounded-lg border border-slate-300 p-2.5 text-xs font-mono font-medium focus:ring-1 focus:ring-amber-500 focus:outline-none"
                 />
               </div>
 
@@ -324,7 +324,7 @@ export default function CheckoutPage() {
                   placeholder="Gate pass instructions, receiver name..."
                   value={deliveryNotes}
                   onChange={(e) => setDeliveryNotes(e.target.value)}
-                  className="w-full rounded-lg border border-slate-300 p-2.5 text-xs focus:ring-1 focus:ring-blue-600 focus:outline-none"
+                  className="w-full rounded-lg border border-slate-300 p-2.5 text-xs focus:ring-1 focus:ring-amber-500 focus:outline-none"
                 />
               </div>
             </CardContent>
@@ -334,7 +334,7 @@ export default function CheckoutPage() {
           <Card className="border shadow-sm">
             <CardHeader className="p-5 pb-3 border-b bg-slate-50/50">
               <CardTitle className="text-sm font-bold text-slate-900 flex items-center gap-2">
-                <Building2 className="w-4 h-4 text-blue-600" /> 3. Business Details (Optional for B2B Input Tax Credit)
+                <Building2 className="w-4 h-4 text-amber-600" /> 3. Business Details (Optional for B2B Input Tax Credit)
               </CardTitle>
               <CardDescription className="text-xs text-slate-500">
                 Enter your company GSTIN to receive a compliant B2B tax invoice to claim ITC.
@@ -348,7 +348,7 @@ export default function CheckoutPage() {
                   placeholder="e.g. Acme Embedded Systems Pvt Ltd"
                   value={businessName}
                   onChange={(e) => setBusinessName(e.target.value)}
-                  className="w-full rounded-lg border border-slate-300 p-2.5 text-xs focus:ring-1 focus:ring-blue-600 focus:outline-none"
+                  className="w-full rounded-lg border border-slate-300 p-2.5 text-xs focus:ring-1 focus:ring-amber-500 focus:outline-none"
                 />
               </div>
 
@@ -360,7 +360,7 @@ export default function CheckoutPage() {
                   placeholder="27AAAAA0000A1Z5"
                   value={gstin}
                   onChange={(e) => setGstin(e.target.value.toUpperCase())}
-                  className="w-full rounded-lg border border-slate-300 p-2.5 text-xs font-mono font-medium focus:ring-1 focus:ring-blue-600 focus:outline-none uppercase"
+                  className="w-full rounded-lg border border-slate-300 p-2.5 text-xs font-mono font-medium focus:ring-1 focus:ring-amber-500 focus:outline-none uppercase"
                 />
               </div>
             </CardContent>
@@ -370,13 +370,13 @@ export default function CheckoutPage() {
           <Card className="border shadow-sm">
             <CardHeader className="p-5 pb-3 border-b bg-slate-50/50">
               <CardTitle className="text-sm font-bold text-slate-900 flex items-center gap-2">
-                <CreditCard className="w-4 h-4 text-blue-600" /> 4. Payment Method
+                <CreditCard className="w-4 h-4 text-amber-600" /> 4. Payment Method
               </CardTitle>
             </CardHeader>
             <CardContent className="p-5 space-y-3 text-xs">
               {/* Option 1: Razorpay */}
               <label className={`p-4 rounded-xl border flex items-start gap-3 cursor-pointer transition-all ${
-                paymentMethod === "RAZORPAY" ? "border-blue-600 bg-blue-50/40 ring-1 ring-blue-600" : "border-slate-200"
+                paymentMethod === "RAZORPAY" ? "border-amber-600 bg-amber-50/40 ring-1 ring-amber-600" : "border-slate-200"
               }`}>
                 <input
                   type="radio"
@@ -398,7 +398,7 @@ export default function CheckoutPage() {
 
               {/* Option 2: Cash on Delivery */}
               <label className={`p-4 rounded-xl border flex items-start gap-3 cursor-pointer transition-all ${
-                paymentMethod === "COD" ? "border-blue-600 bg-blue-50/40 ring-1 ring-blue-600" : "border-slate-200"
+                paymentMethod === "COD" ? "border-amber-600 bg-amber-50/40 ring-1 ring-amber-600" : "border-slate-200"
               }`}>
                 <input
                   type="radio"
@@ -420,7 +420,7 @@ export default function CheckoutPage() {
 
               {/* Option 3: Bank Transfer NEFT / RTGS */}
               <label className={`p-4 rounded-xl border flex items-start gap-3 cursor-pointer transition-all ${
-                paymentMethod === "BANK_TRANSFER" ? "border-blue-600 bg-blue-50/40 ring-1 ring-blue-600" : "border-slate-200"
+                paymentMethod === "BANK_TRANSFER" ? "border-amber-600 bg-amber-50/40 ring-1 ring-amber-600" : "border-slate-200"
               }`}>
                 <input
                   type="radio"
@@ -444,7 +444,7 @@ export default function CheckoutPage() {
                         placeholder="Enter 16-digit Bank UTR / Transaction Reference Number"
                         value={utrNumber}
                         onChange={(e) => setUtrNumber(e.target.value.toUpperCase())}
-                        className="w-full rounded-lg border border-slate-300 p-2 text-xs font-mono uppercase focus:ring-1 focus:ring-blue-600 focus:outline-none"
+                        className="w-full rounded-lg border border-slate-300 p-2 text-xs font-mono uppercase focus:ring-1 focus:ring-amber-500 focus:outline-none"
                       />
                     </div>
                   )}
@@ -469,17 +469,17 @@ export default function CheckoutPage() {
 
                 {gstResult.isIntraState ? (
                   <>
-                    <div className="flex justify-between text-blue-800">
+                    <div className="flex justify-between text-amber-900 font-medium">
                       <span>CGST (Intra-State Central Tax)</span>
                       <span className="font-mono font-semibold">{formatINR(gstResult.totalCGST)}</span>
                     </div>
-                    <div className="flex justify-between text-blue-800">
+                    <div className="flex justify-between text-amber-900 font-medium">
                       <span>SGST (Intra-State Maharashtra Tax)</span>
                       <span className="font-mono font-semibold">{formatINR(gstResult.totalSGST)}</span>
                     </div>
                   </>
                 ) : (
-                  <div className="flex justify-between text-purple-800">
+                  <div className="flex justify-between text-amber-900 font-medium">
                     <span>IGST (Inter-State Integrated Tax)</span>
                     <span className="font-mono font-semibold">{formatINR(gstResult.totalIGST)}</span>
                   </div>
@@ -512,7 +512,7 @@ export default function CheckoutPage() {
                 type="submit"
                 disabled={isLoading}
                 size="lg"
-                className="w-full bg-blue-600 hover:bg-blue-700 text-white font-bold py-3 shadow-lg shadow-blue-600/30 flex items-center justify-center gap-2"
+                className="w-full bg-amber-600 hover:bg-amber-700 text-white font-bold py-3 shadow-lg shadow-amber-600/20 flex items-center justify-center gap-2"
               >
                 {isLoading ? (
                   "Authorizing Order..."

@@ -45,7 +45,7 @@ export default function ComparePage() {
       <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-4 pb-6 border-b">
         <div>
           <div className="flex items-center gap-2">
-            <Link href="/catalog" className="text-slate-500 hover:text-blue-600 transition-colors">
+            <Link href="/catalog" className="text-slate-500 hover:text-amber-600 transition-colors">
               <ArrowLeft className="w-4 h-4" />
             </Link>
             <h1 className="text-2xl font-extrabold text-slate-900">Side-by-Side Product Comparison</h1>
@@ -107,7 +107,7 @@ export default function ComparePage() {
                       </div>
                       <div>
                         <span className="text-[10px] font-mono font-semibold text-slate-400 block">{p.sku}</span>
-                        <Link href={`/products/${p.slug}`} className="font-bold text-slate-900 hover:text-blue-600 transition-colors line-clamp-2">
+                        <Link href={`/products/${p.slug}`} className="font-bold text-slate-900 hover:text-amber-600 transition-colors line-clamp-2">
                           {p.name}
                         </Link>
                       </div>
@@ -116,7 +116,7 @@ export default function ComparePage() {
                         <span className="text-[11px] text-slate-400 line-through">{formatINR(p.mrp)}</span>
                       </div>
                       <Link href={`/products/${p.slug}`} className="block">
-                        <Button size="sm" className="w-full text-xs h-7 bg-blue-600 hover:bg-blue-700 text-white">
+                        <Button size="sm" className="w-full text-xs h-7 bg-amber-600 hover:bg-amber-700 text-white">
                           View Details
                         </Button>
                       </Link>
@@ -137,7 +137,7 @@ export default function ComparePage() {
                 {comparedProducts.map((p) => (
                   <td key={p.id} className="p-3 border-r last:border-r-0">
                     {p.sourceType === "MANUFACTURED" ? (
-                      <Badge className="bg-blue-600 text-white text-[10px]">Own-Made</Badge>
+                      <Badge className="bg-amber-600 text-white text-[10px]">Own-Made</Badge>
                     ) : (
                       <Badge variant="secondary" className="text-[10px]">Traded</Badge>
                     )}
@@ -147,7 +147,7 @@ export default function ComparePage() {
               <tr>
                 <td className="p-3 font-semibold text-slate-500 bg-slate-50/50 border-r">Microcontroller / Chip</td>
                 {comparedProducts.map((p) => (
-                  <td key={p.id} className="p-3 font-mono font-bold text-blue-700 border-r last:border-r-0">
+                  <td key={p.id} className="p-3 font-mono font-bold text-amber-700 border-r last:border-r-0">
                     {p.specs.chip || "N/A"}
                   </td>
                 ))}
@@ -205,7 +205,7 @@ export default function ComparePage() {
                 {comparedProducts.map((p) => (
                   <td key={p.id} className="p-3 border-r last:border-r-0">
                     {p.datasheetUrl ? (
-                      <a href={p.datasheetUrl} target="_blank" rel="noreferrer" className="text-blue-600 font-semibold hover:underline flex items-center gap-1">
+                      <a href={p.datasheetUrl} target="_blank" rel="noreferrer" className="text-amber-600 font-semibold hover:underline flex items-center gap-1">
                         <Download className="w-3 h-3" /> PDF
                       </a>
                     ) : (

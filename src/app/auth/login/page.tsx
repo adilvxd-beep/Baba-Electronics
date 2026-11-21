@@ -3,6 +3,7 @@
 import React, { useState, useEffect } from "react";
 import { useRouter } from "next/navigation";
 import Link from "next/link";
+import Image from "next/image";
 import { 
   Phone, 
   MessageSquare, 
@@ -10,8 +11,7 @@ import {
   ArrowRight, 
   CheckCircle2, 
   RefreshCw, 
-  AlertCircle,
-  Cpu
+  AlertCircle
 } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { Card, CardContent, CardHeader, CardTitle, CardDescription } from "@/components/ui/card";
@@ -102,8 +102,15 @@ export default function LoginPage() {
     <div className="container mx-auto px-4 py-12 md:py-20 flex justify-center items-center">
       <Card className="w-full max-w-md border-slate-200 shadow-xl">
         <CardHeader className="text-center space-y-2 pb-6 border-b border-slate-100">
-          <div className="mx-auto w-12 h-12 rounded-xl bg-blue-600 flex items-center justify-center text-white shadow-md mb-2">
-            <Cpu className="w-6 h-6" />
+          <div className="mx-auto mb-2 flex justify-center">
+            <Image
+              src="/logo.png"
+              alt="Baba Electronics"
+              width={72}
+              height={72}
+              className="h-16 w-auto object-contain drop-shadow-sm"
+              priority
+            />
           </div>
           <CardTitle className="text-2xl font-bold tracking-tight text-slate-900">
             {step === "PHONE" ? "Sign In to Baba Electronics" : "Verify Mobile OTP"}
@@ -160,7 +167,7 @@ export default function LoginPage() {
                     placeholder="98765 43210"
                     value={phone}
                     onChange={(e) => setPhone(e.target.value.replace(/\D/g, ""))}
-                    className="w-full rounded-lg border border-slate-300 bg-white pl-12 pr-4 py-2 text-sm font-medium tracking-wide focus:border-blue-600 focus:outline-none focus:ring-1 focus:ring-blue-600"
+                    className="w-full rounded-lg border border-slate-300 bg-white pl-12 pr-4 py-2 text-sm font-medium tracking-wide focus:border-amber-600 focus:outline-none focus:ring-1 focus:ring-amber-500"
                   />
                 </div>
               </div>
@@ -185,11 +192,11 @@ export default function LoginPage() {
                     onClick={() => setChannel("SMS")}
                     className={`p-2.5 rounded-lg border text-xs font-medium flex items-center justify-center gap-2 transition-all ${
                       channel === "SMS"
-                        ? "border-blue-600 bg-blue-50 text-blue-800 font-semibold"
+                        ? "border-amber-600 bg-amber-50 text-amber-900 font-semibold"
                         : "border-slate-200 text-slate-600 hover:bg-slate-50"
                     }`}
                   >
-                    <Phone className="w-4 h-4 text-blue-600" /> Standard SMS
+                    <Phone className="w-4 h-4 text-amber-600" /> Standard SMS
                   </button>
                 </div>
               </div>
@@ -197,7 +204,7 @@ export default function LoginPage() {
               <Button
                 type="submit"
                 disabled={isLoading || phone.length < 10}
-                className="w-full bg-blue-600 hover:bg-blue-700 text-white font-semibold py-2.5 flex items-center justify-center gap-2"
+                className="w-full bg-amber-600 hover:bg-amber-700 text-white font-semibold py-2.5 flex items-center justify-center gap-2 shadow-sm"
               >
                 {isLoading ? "Sending OTP..." : "Continue with OTP"} <ArrowRight className="w-4 h-4" />
               </Button>
@@ -213,7 +220,7 @@ export default function LoginPage() {
               <Button
                 type="button"
                 variant="outline"
-                className="w-full border-slate-300 text-slate-700 text-xs font-semibold flex items-center justify-center gap-2"
+                className="w-full border-slate-300 text-slate-700 text-xs font-semibold flex items-center justify-center gap-2 hover:bg-slate-50"
                 onClick={() => {
                   alert("Google OAuth will prompt for phone number verification as per requirements.");
                 }}
@@ -235,7 +242,7 @@ export default function LoginPage() {
                   <button
                     type="button"
                     onClick={() => setStep("PHONE")}
-                    className="text-xs text-blue-600 hover:underline"
+                    className="text-xs text-amber-600 hover:underline font-medium"
                   >
                     Change Number
                   </button>
@@ -247,7 +254,7 @@ export default function LoginPage() {
                   placeholder="••••••"
                   value={otpCode}
                   onChange={(e) => setOtpCode(e.target.value.replace(/\D/g, ""))}
-                  className="w-full rounded-lg border border-slate-300 bg-white py-3 text-center text-2xl font-mono tracking-widest font-bold focus:border-blue-600 focus:outline-none focus:ring-1 focus:ring-blue-600"
+                  className="w-full rounded-lg border border-slate-300 bg-white py-3 text-center text-2xl font-mono tracking-widest font-bold focus:border-amber-600 focus:outline-none focus:ring-1 focus:ring-amber-500"
                   autoFocus
                 />
               </div>
@@ -255,7 +262,7 @@ export default function LoginPage() {
               <Button
                 type="submit"
                 disabled={isLoading || otpCode.length < 6}
-                className="w-full bg-blue-600 hover:bg-blue-700 text-white font-semibold py-2.5"
+                className="w-full bg-amber-600 hover:bg-amber-700 text-white font-semibold py-2.5 shadow-sm"
               >
                 {isLoading ? "Verifying..." : "Verify & Sign In"}
               </Button>
@@ -268,7 +275,7 @@ export default function LoginPage() {
                   <button
                     type="button"
                     onClick={() => handleSendOtp()}
-                    className="text-blue-600 font-semibold hover:underline flex items-center gap-1"
+                    className="text-amber-600 font-semibold hover:underline flex items-center gap-1"
                   >
                     <RefreshCw className="w-3 h-3" /> Resend OTP
                   </button>

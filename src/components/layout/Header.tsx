@@ -70,41 +70,41 @@ export function Header() {
             <input
               type="search"
               placeholder="Search IoT boards, ESP32, sensors, dev kits..."
-              className="w-full rounded-full border border-input bg-slate-50 px-9 py-2 text-sm focus:outline-none focus:ring-2 focus:ring-blue-600 focus:bg-white transition-all"
+              className="w-full rounded-full border border-input bg-slate-50 px-9 py-2 text-sm focus:outline-none focus:ring-2 focus:ring-amber-500 focus:bg-white transition-all"
             />
           </div>
         </div>
 
         {/* Quick Actions (Desktop) */}
         <nav className="hidden lg:flex items-center gap-6 text-sm font-medium text-slate-700">
-          <Link href="/catalog" className="hover:text-blue-600 transition-colors">
+          <Link href="/catalog" className="hover:text-amber-600 transition-colors">
             All Products
           </Link>
-          <Link href="/categories/iot-dev-boards" className="hover:text-blue-600 transition-colors">
+          <Link href="/categories/iot-dev-boards" className="hover:text-amber-600 transition-colors">
             IoT & Dev Kits
           </Link>
-          <Link href="/custom-build" className="flex items-center gap-1 text-slate-900 hover:text-blue-600 transition-colors">
-            <Wrench className="w-4 h-4 text-blue-600" /> Custom Builds
+          <Link href="/custom-build" className="flex items-center gap-1 text-slate-900 hover:text-amber-600 transition-colors">
+            <Wrench className="w-4 h-4 text-amber-600" /> Custom Builds
           </Link>
-          <Link href="/quick-order" className="flex items-center gap-1 text-slate-600 hover:text-blue-600 transition-colors">
-            <FileSpreadsheet className="w-4 h-4" /> Quick Order
+          <Link href="/quick-order" className="flex items-center gap-1 text-slate-600 hover:text-amber-600 transition-colors">
+            <FileSpreadsheet className="w-4 h-4 text-amber-600" /> Quick Order
           </Link>
         </nav>
 
         {/* User Account & Cart */}
         <div className="flex items-center gap-2">
           <Link href="/auth/login">
-            <Button variant="ghost" size="sm" className="hidden sm:flex items-center gap-1.5 text-slate-700">
+            <Button variant="ghost" size="sm" className="hidden sm:flex items-center gap-1.5 text-slate-700 hover:text-amber-600 hover:bg-amber-50">
               <User className="w-4 h-4" />
               <span>Login</span>
             </Button>
           </Link>
 
           <Link href="/cart">
-            <Button variant="outline" size="sm" className="relative flex items-center gap-2 border-slate-300">
+            <Button variant="outline" size="sm" className="relative flex items-center gap-2 border-slate-300 hover:border-amber-400 hover:bg-amber-50/50">
               <ShoppingCart className="w-4 h-4 text-slate-800" />
               <span className="hidden sm:inline font-semibold">Cart</span>
-              <Badge variant="default" className="h-5 min-w-[20px] px-1 bg-blue-600 text-xs">
+              <Badge variant="default" className="h-5 min-w-[20px] px-1 bg-amber-500 text-slate-950 font-bold text-xs">
                 {totalQuantity}
               </Badge>
             </Button>
@@ -126,42 +126,52 @@ export function Header() {
       {/* Mobile Drawer Menu */}
       {mobileMenuOpen && (
         <div className="md:hidden border-t bg-background px-4 py-4 space-y-3 shadow-lg">
+          <div className="flex items-center justify-between pb-2 border-b">
+            <Image
+              src="/header-logo.png"
+              alt="Baba Electronics"
+              width={140}
+              height={45}
+              className="h-8 w-auto object-contain"
+            />
+            <span className="text-[11px] text-emerald-600 font-medium">Pan-India Express</span>
+          </div>
           <div className="relative w-full mb-3">
             <Search className="absolute left-3 top-2.5 h-4 w-4 text-muted-foreground" />
             <input
               type="search"
               placeholder="Search components, SKUs, boards..."
-              className="w-full rounded-md border border-input bg-slate-50 px-9 py-2 text-sm focus:outline-none focus:ring-2 focus:ring-blue-600"
+              className="w-full rounded-md border border-input bg-slate-50 px-9 py-2 text-sm focus:outline-none focus:ring-2 focus:ring-amber-500"
             />
           </div>
           <div className="grid grid-cols-2 gap-2 text-sm font-medium">
             <Link 
               href="/catalog" 
-              className="p-2.5 rounded-lg bg-slate-50 hover:bg-slate-100 flex items-center gap-2"
+              className="p-2.5 rounded-lg bg-slate-50 hover:bg-amber-50 hover:text-amber-900 flex items-center gap-2 transition-colors"
               onClick={() => setMobileMenuOpen(false)}
             >
-              <Cpu className="w-4 h-4 text-blue-600" /> All Products
+              <Cpu className="w-4 h-4 text-amber-600" /> All Products
             </Link>
             <Link 
               href="/custom-build" 
-              className="p-2.5 rounded-lg bg-slate-50 hover:bg-slate-100 flex items-center gap-2"
+              className="p-2.5 rounded-lg bg-slate-50 hover:bg-amber-50 hover:text-amber-900 flex items-center gap-2 transition-colors"
               onClick={() => setMobileMenuOpen(false)}
             >
               <Wrench className="w-4 h-4 text-amber-600" /> Custom Builds
             </Link>
             <Link 
               href="/quick-order" 
-              className="p-2.5 rounded-lg bg-slate-50 hover:bg-slate-100 flex items-center gap-2"
+              className="p-2.5 rounded-lg bg-slate-50 hover:bg-amber-50 hover:text-amber-900 flex items-center gap-2 transition-colors"
               onClick={() => setMobileMenuOpen(false)}
             >
               <FileSpreadsheet className="w-4 h-4 text-emerald-600" /> Quick Order
             </Link>
             <Link 
               href="/auth/login" 
-              className="p-2.5 rounded-lg bg-slate-50 hover:bg-slate-100 flex items-center gap-2"
+              className="p-2.5 rounded-lg bg-slate-50 hover:bg-amber-50 hover:text-amber-900 flex items-center gap-2 transition-colors"
               onClick={() => setMobileMenuOpen(false)}
             >
-              <User className="w-4 h-4 text-purple-600" /> OTP Sign In
+              <User className="w-4 h-4 text-amber-600" /> OTP Sign In
             </Link>
           </div>
         </div>

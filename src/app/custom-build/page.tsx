@@ -112,7 +112,7 @@ export default function CustomBuildPage() {
             </div>
             <div className="flex justify-between">
               <span className="text-slate-500">Notification Channel:</span>
-              <strong className="text-blue-600">WhatsApp (+91 {submittedQuote.customerPhone})</strong>
+              <strong className="text-amber-600">WhatsApp (+91 {submittedQuote.customerPhone})</strong>
             </div>
             <div className="flex justify-between">
               <span className="text-slate-500">Guaranteed Review:</span>
@@ -127,7 +127,7 @@ export default function CustomBuildPage() {
               </Button>
             </a>
             <Link href="/catalog">
-              <Button size="sm" className="bg-blue-600 hover:bg-blue-700 text-white text-xs">
+              <Button size="sm" className="bg-amber-600 hover:bg-amber-700 text-white text-xs">
                 Browse Ready Stock Catalog &rarr;
               </Button>
             </Link>
@@ -145,7 +145,7 @@ export default function CustomBuildPage() {
             </div>
             <div className="p-4 rounded-xl border bg-white space-y-1.5 shadow-sm">
               <span className="font-bold text-slate-900 flex items-center gap-1.5">
-                <Clock className="w-4 h-4 text-blue-600" /> 50% Milestone Advance
+                <Clock className="w-4 h-4 text-amber-600" /> 50% Milestone Advance
               </span>
               <p className="text-slate-500">Pay 50% to trigger PCB fabrication and component BOM procurement.</p>
             </div>
@@ -174,7 +174,7 @@ export default function CustomBuildPage() {
                   onClick={() => setBoardType(item.title as any)}
                   className={`p-4 rounded-xl border text-left transition-all ${
                     boardType === item.title
-                      ? "border-blue-600 bg-blue-50/50 ring-1 ring-blue-600 font-semibold text-slate-900"
+                      ? "border-amber-600 bg-amber-50/50 ring-1 ring-amber-500 font-semibold text-slate-900"
                       : "border-slate-200 hover:border-slate-300 text-slate-600"
                   }`}
                 >
@@ -199,7 +199,7 @@ export default function CustomBuildPage() {
                   placeholder="e.g. 180 x 60 cm or 10 x 8 cm"
                   value={dimensions}
                   onChange={(e) => setDimensions(e.target.value)}
-                  className="w-full rounded-lg border border-slate-300 p-2.5 text-xs focus:ring-1 focus:ring-blue-600 focus:outline-none"
+                  className="w-full rounded-lg border border-slate-300 p-2.5 text-xs focus:ring-1 focus:ring-amber-500 focus:outline-none"
                 />
               </div>
 
@@ -211,7 +211,7 @@ export default function CustomBuildPage() {
                   required
                   value={targetQuantity}
                   onChange={(e) => setTargetQuantity(parseInt(e.target.value) || 1)}
-                  className="w-full rounded-lg border border-slate-300 p-2.5 text-xs font-bold focus:ring-1 focus:ring-blue-600 focus:outline-none"
+                  className="w-full rounded-lg border border-slate-300 p-2.5 text-xs font-bold focus:ring-1 focus:ring-amber-500 focus:outline-none"
                 />
               </div>
 
@@ -222,7 +222,7 @@ export default function CustomBuildPage() {
                   placeholder="e.g. ESP32 Wi-Fi + RS485 Master-Slave"
                   value={controllerChip}
                   onChange={(e) => setControllerChip(e.target.value)}
-                  className="w-full rounded-lg border border-slate-300 p-2.5 text-xs focus:ring-1 focus:ring-blue-600 focus:outline-none"
+                  className="w-full rounded-lg border border-slate-300 p-2.5 text-xs focus:ring-1 focus:ring-amber-500 focus:outline-none"
                 />
               </div>
 
@@ -233,7 +233,7 @@ export default function CustomBuildPage() {
                   placeholder="e.g. 12V 10A Industrial / 24V Solar"
                   value={powerSupply}
                   onChange={(e) => setPowerSupply(e.target.value)}
-                  className="w-full rounded-lg border border-slate-300 p-2.5 text-xs focus:ring-1 focus:ring-blue-600 focus:outline-none"
+                  className="w-full rounded-lg border border-slate-300 p-2.5 text-xs focus:ring-1 focus:ring-amber-500 focus:outline-none"
                 />
               </div>
 
@@ -244,7 +244,7 @@ export default function CustomBuildPage() {
                   placeholder="Describe your control requirements, phone app sync, display modes, weatherproofing, or relay switches..."
                   value={notes}
                   onChange={(e) => setNotes(e.target.value)}
-                  className="w-full rounded-lg border border-slate-300 p-2.5 text-xs focus:ring-1 focus:ring-blue-600 focus:outline-none"
+                  className="w-full rounded-lg border border-slate-300 p-2.5 text-xs focus:ring-1 focus:ring-amber-500 focus:outline-none"
                 />
               </div>
             </CardContent>
@@ -254,7 +254,7 @@ export default function CustomBuildPage() {
           <Card className="border shadow-sm">
             <CardHeader className="bg-slate-50/70 p-5 pb-3 border-b">
               <CardTitle className="text-sm font-bold text-slate-900 flex items-center gap-2">
-                <Upload className="w-4 h-4 text-blue-600" /> 3. Schematic & Gerber File Upload (.zip)
+                <Upload className="w-4 h-4 text-amber-600" /> 3. Schematic & Gerber File Upload (.zip)
               </CardTitle>
             </CardHeader>
             <CardContent className="p-5 space-y-3 text-xs">
@@ -298,7 +298,7 @@ export default function CustomBuildPage() {
                   placeholder="e.g. Anand Deshmukh"
                   value={customerName}
                   onChange={(e) => setCustomerName(e.target.value)}
-                  className="w-full rounded-lg border border-slate-300 p-2.5 text-xs focus:ring-1 focus:ring-blue-600 focus:outline-none"
+                  className="w-full rounded-lg border border-slate-300 p-2.5 text-xs focus:ring-1 focus:ring-amber-500 focus:outline-none"
                 />
               </div>
 
@@ -313,7 +313,7 @@ export default function CustomBuildPage() {
                     placeholder="98765 43210"
                     value={customerPhone}
                     onChange={(e) => setCustomerPhone(e.target.value.replace(/\D/g, ""))}
-                    className="w-full rounded-lg border border-slate-300 pl-11 pr-3 py-2.5 text-xs font-mono font-medium focus:ring-1 focus:ring-blue-600 focus:outline-none"
+                    className="w-full rounded-lg border border-slate-300 pl-11 pr-3 py-2.5 text-xs font-mono font-medium focus:ring-1 focus:ring-amber-500 focus:outline-none"
                   />
                 </div>
               </div>
@@ -325,7 +325,7 @@ export default function CustomBuildPage() {
                   placeholder="e.g. Apex Signage LLP"
                   value={businessName}
                   onChange={(e) => setBusinessName(e.target.value)}
-                  className="w-full rounded-lg border border-slate-300 p-2.5 text-xs focus:ring-1 focus:ring-blue-600 focus:outline-none"
+                  className="w-full rounded-lg border border-slate-300 p-2.5 text-xs focus:ring-1 focus:ring-amber-500 focus:outline-none"
                 />
               </div>
 
@@ -336,7 +336,7 @@ export default function CustomBuildPage() {
                   placeholder="anand@company.in"
                   value={customerEmail}
                   onChange={(e) => setCustomerEmail(e.target.value)}
-                  className="w-full rounded-lg border border-slate-300 p-2.5 text-xs focus:ring-1 focus:ring-blue-600 focus:outline-none"
+                  className="w-full rounded-lg border border-slate-300 p-2.5 text-xs focus:ring-1 focus:ring-amber-500 focus:outline-none"
                 />
               </div>
             </CardContent>
@@ -346,7 +346,7 @@ export default function CustomBuildPage() {
             type="submit"
             disabled={isSubmitting}
             size="lg"
-            className="w-full bg-blue-600 hover:bg-blue-700 text-white font-bold py-3 shadow-lg shadow-blue-600/30 flex items-center justify-center gap-2"
+            className="w-full bg-amber-600 hover:bg-amber-700 text-white font-bold py-3 shadow-lg shadow-amber-600/20 flex items-center justify-center gap-2"
           >
             {isSubmitting ? "Dispatching Spec Archive..." : "Submit Technical Specs for Quotation"} <ArrowRight className="w-4 h-4" />
           </Button>

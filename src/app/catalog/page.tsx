@@ -21,6 +21,7 @@ import { Badge } from "@/components/ui/badge";
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 import { SAMPLE_PRODUCTS, ProductData } from "@/lib/catalog/data";
 import { formatINR } from "@/lib/utils";
+import { ProductCard } from "@/components/products/ProductCard";
 
 export default function CatalogPage() {
   const [searchQuery, setSearchQuery] = useState("");
@@ -118,7 +119,7 @@ export default function CatalogPage() {
           <div className="rounded-xl border bg-white p-5 space-y-5 shadow-sm">
             <div className="flex items-center justify-between font-bold text-sm text-slate-900">
               <span className="flex items-center gap-2">
-                <SlidersHorizontal className="w-4 h-4 text-blue-600" /> Technical Filters
+                <SlidersHorizontal className="w-4 h-4 text-amber-600" /> Technical Filters
               </span>
               {(selectedCategory !== "ALL" || selectedVoltage !== "ALL" || selectedSource !== "ALL") && (
                 <button
@@ -127,7 +128,7 @@ export default function CatalogPage() {
                     setSelectedVoltage("ALL");
                     setSelectedSource("ALL");
                   }}
-                  className="text-xs text-blue-600 hover:underline"
+                  className="text-xs text-amber-600 hover:underline"
                 >
                   Reset
                 </button>
@@ -146,7 +147,7 @@ export default function CatalogPage() {
                     onClick={() => setSelectedCategory(cat)}
                     className={`text-left px-2.5 py-1.5 rounded-md transition-colors ${
                       selectedCategory === cat
-                        ? "bg-blue-600 text-white font-semibold"
+                        ? "bg-amber-600 text-white font-semibold"
                         : "text-slate-600 hover:bg-slate-100"
                     }`}
                   >
@@ -193,7 +194,7 @@ export default function CatalogPage() {
                 <button
                   onClick={() => setSelectedSource("MANUFACTURED")}
                   className={`text-left px-2.5 py-1.5 rounded-md ${
-                    selectedSource === "MANUFACTURED" ? "bg-blue-600 text-white font-semibold" : "text-slate-600 hover:bg-slate-100"
+                    selectedSource === "MANUFACTURED" ? "bg-amber-600 text-white font-semibold" : "text-slate-600 hover:bg-slate-100"
                   }`}
                 >
                   Own-Made (Baba Electronics)
@@ -201,7 +202,7 @@ export default function CatalogPage() {
                 <button
                   onClick={() => setSelectedSource("TRADED")}
                   className={`text-left px-2.5 py-1.5 rounded-md ${
-                    selectedSource === "TRADED" ? "bg-blue-600 text-white font-semibold" : "text-slate-600 hover:bg-slate-100"
+                    selectedSource === "TRADED" ? "bg-amber-600 text-white font-semibold" : "text-slate-600 hover:bg-slate-100"
                   }`}
                 >
                   Traded / Certified Imports
@@ -233,101 +234,10 @@ export default function CatalogPage() {
               </Button>
             </div>
           ) : (
-            <div className="grid grid-cols-1 sm:grid-cols-2 xl:grid-cols-3 gap-6">
-              {filteredProducts.map((prod) => {
-                const isCompared = Boolean(compareList.find((p) => p.id === prod.id));
-
-                return (
-                  <Card key={prod.id} className="flex flex-col justify-between overflow-hidden border hover:border-blue-400 hover:shadow-md transition-all">
-                    <div className="relative aspect-video bg-slate-100 overflow-hidden">
-                      <img 
-                        src={prod.images[0]} 
-                        alt={prod.name} 
-                        className="w-full h-full object-cover" 
-                      />
-                      <div className="absolute top-2 left-2 flex flex-col gap-1">
-                        {prod.sourceType === "MANUFACTURED" ? (
-                          <Badge variant="default" className="text-[10px] bg-blue-600">Own-Made</Badge>
-                        ) : (
-                          <Badge variant="secondary" className="text-[10px] bg-slate-800 text-white">Traded</Badge>
-                        )}
-                        {prod.requiresCustomFreight && (
-                          <Badge variant="warning" className="text-[10px]">Freight Delivery</Badge>
-                        )}
-                      </div>
-                      <div className="absolute top-2 right-2">
-                        <span className="text-[10px] font-mono bg-white/90 backdrop-blur px-1.5 py-0.5 rounded border text-slate-700">
-                          {prod.sku}
-                        </span>
-                      </div>
-                    </div>
-
-                    <CardHeader className="p-4 pb-2 space-y-1">
-                      <p className="text-[10px] font-semibold text-slate-400 uppercase tracking-wider">{prod.category}</p>
-                      <Link href={`/products/${prod.slug}`}>
-                        <CardTitle className="text-sm font-bold line-clamp-2 hover:text-blue-600 transition-colors">
-                          {prod.name}
-                        </CardTitle>
-                      </Link>
-                      <div className="flex flex-wrap gap-1 pt-1.5">
-                        {prod.specs.chip && (
-                          <span className="text-[10px] bg-blue-50 text-blue-700 px-1.5 py-0.5 rounded font-mono">
-                            {prod.specs.chip}
-                          </span>
-                        )}
-                        {prod.specs.voltage && (
-                          <span className="text-[10px] bg-slate-100 text-slate-600 px-1.5 py-0.5 rounded">
-                            {prod.specs.voltage}
-                          </span>
-                        )}
-                        {prod.specs.pins && (
-                          <span className="text-[10px] bg-slate-100 text-slate-600 px-1.5 py-0.5 rounded">
-                            {prod.specs.pins}
-                          </span>
-                        )}
-                      </div>
-                    </CardHeader>
-
-                    <CardContent className="p-4 pt-0 space-y-3">
-                      <div className="pt-2 border-t flex items-baseline justify-between">
-                        <div>
-                          <span className="text-lg font-extrabold text-slate-900">{formatINR(prod.sellingPrice)}</span>
-                          <span className="text-xs text-slate-400 line-through ml-1.5">{formatINR(prod.mrp)}</span>
-                        </div>
-                        <span className="text-[11px] font-medium text-emerald-600">
-                          {prod.stockQuantity > 0 ? `${prod.stockQuantity} in stock` : "Ships in 5 days"}
-                        </span>
-                      </div>
-
-                      {/* Tiered Discount Hint */}
-                      {prod.quantityDiscounts.length > 0 && (
-                        <div className="flex items-center gap-1 text-[11px] text-blue-700 bg-blue-50 px-2 py-1 rounded font-medium">
-                          <TrendingDown className="w-3.5 h-3.5" />
-                          <span>Bulk: {formatINR(prod.quantityDiscounts[0].discountedPrice)} for {prod.quantityDiscounts[0].minQuantity}+ pcs</span>
-                        </div>
-                      )}
-
-                      {/* Actions */}
-                      <div className="grid grid-cols-2 gap-2 pt-1">
-                        <Button 
-                          variant={isCompared ? "secondary" : "outline"}
-                          size="sm"
-                          className="text-xs h-8"
-                          onClick={() => toggleCompare(prod)}
-                        >
-                          {isCompared ? <Check className="w-3 h-3 mr-1 text-emerald-600" /> : <Plus className="w-3 h-3 mr-1" />}
-                          {isCompared ? "Compared" : "Compare"}
-                        </Button>
-                        <Link href={`/products/${prod.slug}`}>
-                          <Button size="sm" className="w-full bg-blue-600 hover:bg-blue-700 text-white text-xs h-8">
-                            View PDP
-                          </Button>
-                        </Link>
-                      </div>
-                    </CardContent>
-                  </Card>
-                );
-              })}
+            <div className="grid grid-cols-1 sm:grid-cols-2 xl:grid-cols-3 gap-5">
+              {filteredProducts.map((prod) => (
+                <ProductCard key={prod.id} product={prod} />
+              ))}
             </div>
           )}
         </div>

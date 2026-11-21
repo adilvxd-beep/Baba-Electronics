@@ -30,7 +30,7 @@ export default function CartPage() {
   if (items.length === 0) {
     return (
       <div className="container mx-auto px-4 py-20 text-center space-y-4">
-        <div className="w-16 h-16 rounded-2xl bg-blue-50 text-blue-600 flex items-center justify-center mx-auto shadow-sm">
+        <div className="w-16 h-16 rounded-2xl bg-amber-50 text-amber-600 flex items-center justify-center mx-auto shadow-sm">
           <ShoppingCart className="w-8 h-8" />
         </div>
         <h1 className="text-2xl font-bold text-slate-800">Your Cart is Currently Empty</h1>
@@ -38,7 +38,7 @@ export default function CartPage() {
           Explore our wide range of IoT development boards, digital sensors, and custom electronic signage modules.
         </p>
         <Link href="/catalog">
-          <Button className="bg-blue-600 hover:bg-blue-700 text-white text-xs">
+          <Button className="bg-amber-600 hover:bg-amber-700 text-white text-xs">
             Browse IoT Catalog &rarr;
           </Button>
         </Link>
@@ -146,7 +146,7 @@ export default function CartPage() {
           </div>
 
           <div className="flex justify-between items-center pt-2">
-            <Link href="/catalog" className="text-xs font-semibold text-blue-600 hover:underline flex items-center gap-1">
+            <Link href="/catalog" className="text-xs font-semibold text-amber-600 hover:underline flex items-center gap-1">
               <ArrowLeft className="w-3.5 h-3.5" /> Continue Shopping
             </Link>
             <span className="text-xs text-slate-400">Stock locks for 15 mins during checkout</span>
@@ -191,7 +191,7 @@ export default function CartPage() {
               </div>
 
               <Link href="/checkout" className="block w-full pt-2">
-                <Button size="lg" className="w-full bg-blue-600 hover:bg-blue-700 text-white font-semibold flex items-center justify-center gap-2 shadow-md">
+                <Button size="lg" className="w-full bg-amber-600 hover:bg-amber-700 text-white font-semibold flex items-center justify-center gap-2 shadow-md">
                   Proceed to Checkout <ArrowRight className="w-4 h-4" />
                 </Button>
               </Link>
@@ -202,7 +202,7 @@ export default function CartPage() {
                   <span>Razorpay Secure (UPI, Netbanking, Cards)</span>
                 </div>
                 <div className="flex items-center gap-2">
-                  <Truck className="w-4 h-4 text-blue-600 flex-shrink-0" />
+                  <Truck className="w-4 h-4 text-amber-600 flex-shrink-0" />
                   <span>Trackable via WhatsApp & SMS notifications</span>
                 </div>
               </div>

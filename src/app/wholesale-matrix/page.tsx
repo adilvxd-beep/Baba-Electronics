@@ -94,7 +94,7 @@ export default function WholesaleMatrixPage() {
       <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-4 pb-6 border-b">
         <div>
           <div className="flex items-center gap-2">
-            <Link href="/catalog" className="text-slate-500 hover:text-blue-600">
+            <Link href="/catalog" className="text-slate-500 hover:text-amber-600">
               <ArrowLeft className="w-4 h-4" />
             </Link>
             <h1 className="text-2xl font-extrabold text-slate-900">B2B Wholesale Variant Matrix</h1>
@@ -135,7 +135,7 @@ export default function WholesaleMatrixPage() {
           size="sm"
           disabled={totalSelectedUnits === 0}
           onClick={handleAddAllToCart}
-          className="bg-blue-600 hover:bg-blue-700 text-white font-bold text-xs flex items-center gap-2"
+          className="bg-amber-600 hover:bg-amber-700 text-white font-bold text-xs flex items-center gap-2"
         >
           <ShoppingCart className="w-4 h-4" /> Add All to Cart ({totalSelectedUnits} items) &rarr;
         </Button>
@@ -165,7 +165,7 @@ export default function WholesaleMatrixPage() {
 
                 return (
                   <tr key={item.sku} className="hover:bg-slate-50/80 transition-colors">
-                    <td className="p-3 font-mono font-bold text-blue-700">{item.sku}</td>
+                    <td className="p-3 font-mono font-bold text-amber-700">{item.sku}</td>
                     <td className="p-3 font-medium text-slate-800 max-w-xs truncate">{item.name}</td>
                     <td className="p-3 text-slate-500">{item.product.category}</td>
                     <td className="p-3 font-bold text-slate-900">{formatINR(item.basePrice)}</td>
@@ -182,7 +182,7 @@ export default function WholesaleMatrixPage() {
                         value={item.quantity === 0 ? "" : item.quantity}
                         onChange={(e) => handleQtyChange(item.sku, parseInt(e.target.value) || 0)}
                         placeholder="0"
-                        className="w-20 rounded-lg border border-slate-300 p-1.5 text-center text-xs font-bold focus:ring-1 focus:ring-blue-600 focus:outline-none"
+                        className="w-20 rounded-lg border border-slate-300 p-1.5 text-center text-xs font-bold focus:ring-1 focus:ring-amber-500 focus:outline-none"
                       />
                     </td>
                     <td className="p-3 text-right font-extrabold text-slate-900">

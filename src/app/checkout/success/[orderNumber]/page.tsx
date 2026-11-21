@@ -41,14 +41,14 @@ export default function OrderSuccessPage() {
         <CardHeader className="bg-slate-50 border-b p-5 flex flex-col sm:flex-row sm:items-center justify-between gap-3">
           <div>
             <span className="text-[10px] font-semibold text-slate-400 uppercase tracking-wider block">Order Reference</span>
-            <span className="font-mono text-base font-extrabold text-blue-700">{orderNumber}</span>
+            <span className="font-mono text-base font-extrabold text-amber-700">{orderNumber}</span>
           </div>
           <a
             href={`/api/invoices/${orderNumber}`}
             target="_blank"
             rel="noreferrer"
           >
-            <Button size="sm" variant="outline" className="text-xs flex items-center gap-1.5 bg-white border-blue-300 text-blue-700 hover:bg-blue-50">
+            <Button size="sm" variant="outline" className="text-xs flex items-center gap-1.5 bg-white border-amber-300 text-amber-700 hover:bg-amber-50">
               <Download className="w-3.5 h-3.5" /> Download GST Invoice
             </Button>
           </a>
@@ -70,7 +70,7 @@ export default function OrderSuccessPage() {
             <h3 className="font-bold text-slate-900 text-sm">Fulfillment Timeline</h3>
             <div className="grid grid-cols-1 sm:grid-cols-3 gap-3">
               <div className="p-3 rounded-lg border bg-slate-50 space-y-1">
-                <span className="font-bold text-blue-700 block">1. Confirmed</span>
+                <span className="font-bold text-amber-700 block">1. Confirmed</span>
                 <p className="text-[11px] text-slate-500">Stock locked & invoice generated</p>
               </div>
               <div className="p-3 rounded-lg border bg-white space-y-1">
@@ -91,7 +91,7 @@ export default function OrderSuccessPage() {
               </Button>
             </Link>
             <Link href="/" className="w-full sm:w-auto">
-              <Button className="w-full bg-blue-600 hover:bg-blue-700 text-white text-xs flex items-center justify-center gap-1.5">
+              <Button className="w-full bg-amber-600 hover:bg-amber-700 text-white text-xs flex items-center justify-center gap-1.5">
                 Go to Storefront <ArrowRight className="w-3.5 h-3.5" />
               </Button>
             </Link>

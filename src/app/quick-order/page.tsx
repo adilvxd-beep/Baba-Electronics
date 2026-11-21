@@ -72,7 +72,7 @@ export default function QuickOrderPage() {
       <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-4 pb-4 border-b">
         <div>
           <div className="flex items-center gap-2">
-            <Link href="/catalog" className="text-slate-500 hover:text-blue-600">
+            <Link href="/catalog" className="text-slate-500 hover:text-amber-600">
               <ArrowLeft className="w-4 h-4" />
             </Link>
             <h1 className="text-2xl font-extrabold text-slate-900">B2B Quick Order by SKU</h1>
@@ -99,7 +99,7 @@ export default function QuickOrderPage() {
       <Card className="border shadow-md">
         <CardHeader className="bg-slate-50 border-b p-5">
           <CardTitle className="text-sm font-bold text-slate-900 flex items-center gap-2">
-            <FileSpreadsheet className="w-4 h-4 text-blue-600" /> Batch SKU Order Table
+            <FileSpreadsheet className="w-4 h-4 text-amber-600" /> Batch SKU Order Table
           </CardTitle>
           <CardDescription className="text-xs text-slate-500">
             Available SKUs: BE-ESP32-001, BE-SEN-DHT22, BE-CUST-LSB01, BE-ARD-NANO3, BE-KIT-37S
@@ -121,7 +121,7 @@ export default function QuickOrderPage() {
                       placeholder="Enter SKU (e.g. BE-ESP32-001)"
                       value={row.sku}
                       onChange={(e) => updateRow(idx, "sku", e.target.value.toUpperCase())}
-                      className="w-full rounded-lg border border-slate-300 p-2 text-xs font-mono font-semibold uppercase focus:ring-1 focus:ring-blue-600 focus:outline-none"
+                      className="w-full rounded-lg border border-slate-300 p-2 text-xs font-mono font-semibold uppercase focus:ring-1 focus:ring-amber-500 focus:outline-none"
                     />
                   </div>
 
@@ -132,7 +132,7 @@ export default function QuickOrderPage() {
                       placeholder="Qty"
                       value={row.quantity}
                       onChange={(e) => updateRow(idx, "quantity", parseInt(e.target.value) || 1)}
-                      className="w-full rounded-lg border border-slate-300 p-2 text-xs font-bold text-center focus:ring-1 focus:ring-blue-600 focus:outline-none"
+                      className="w-full rounded-lg border border-slate-300 p-2 text-xs font-bold text-center focus:ring-1 focus:ring-amber-500 focus:outline-none"
                     />
                   </div>
 
@@ -176,7 +176,7 @@ export default function QuickOrderPage() {
               type="button"
               size="sm"
               onClick={handleAddBatchToCart}
-              className="bg-blue-600 hover:bg-blue-700 text-white text-xs font-semibold flex items-center gap-2"
+              className="bg-amber-600 hover:bg-amber-700 text-white text-xs font-semibold flex items-center gap-2"
             >
               <ShoppingCart className="w-3.5 h-3.5" /> Add Entire Batch to Cart &rarr;
             </Button>
