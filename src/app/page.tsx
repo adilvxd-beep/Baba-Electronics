@@ -30,22 +30,22 @@ export default function HomePage() {
         {/* 4. Deals of the Day / Hot Products with Countdown */}
         <DealsOfTheDay />
 
-        {/* 5. Featured Category 1: Sensors & Modules */}
+        {/* 5. Featured Category 1: Emergency & Fire Exit Signs */}
         <CategoryShowcase
-          categoryTitle="Wide Range of Sensors & Modules"
-          categorySubtitle="Precision temperature, gas, motion, and environmental modules"
-          categoryFilter="Sensors"
-          categorySlug="sensors"
-          subcategories={["Temperature", "Gas & Air", "Motion", "Distance"]}
+          categoryTitle="LED Fire & Emergency Exit Sign Boards"
+          categorySubtitle="ISO 7010 running man, directional arrows, and NBC 2016 compliant escape indicators"
+          categoryFilter="Fire & Emergency Exit"
+          categorySlug="fire-emergency-exit"
+          subcategories={["Right Arrow", "Left Arrow", "Door Header", "Master Banner"]}
         />
 
-        {/* 6. Featured Category 2: IoT & Dev Kits */}
+        {/* 6. Featured Category 2: Multilingual & Facility Wayfinding Signs */}
         <CategoryShowcase
-          categoryTitle="IoT & Microcontroller Dev Boards"
-          categorySubtitle="ESP32 dual-core Wi-Fi + BLE, Arduino compatibles, and dev kits"
-          categoryFilter="IoT"
-          categorySlug="esp32"
-          subcategories={["ESP32", "Arduino", "Kits", "Wireless"]}
+          categoryTitle="Multilingual & Wayfinding LED Light Boards"
+          categorySubtitle="Hindi-English bilingual escape signs, restroom indicators, and elevator markers"
+          categoryFilter="Signs"
+          categorySlug="multilingual-safety-signs"
+          subcategories={["Bilingual NBC", "Restroom & Toilet", "Elevator & Stairs", "Utility Shaft"]}
         />
 
         {/* 7. Mobile App & WhatsApp Quick Ordering Section */}
@@ -59,10 +59,10 @@ export default function HomePage() {
               <span>B2B & Bulk Wholesale Procurement</span>
             </div>
             <h2 className="text-2xl sm:text-3xl font-extrabold tracking-tight">
-              Rapid Matrix Ordering for Production Runs
+              Rapid Matrix Ordering for Commercial Projects
             </h2>
             <p className="text-slate-300 text-sm leading-relaxed">
-              Order hundreds of microcontrollers and sensors with variant matrices on a single high-speed screen. Enter GSTIN during checkout for instant input tax credit (ITC) invoices.
+              Order hundreds of emergency exit signs, directional glow boards, and custom architectural signage on a single high-speed screen. Enter GSTIN during checkout for instant input tax credit (ITC) invoices.
             </p>
           </div>
           <div className="flex flex-col sm:flex-row gap-3 w-full md:w-auto">

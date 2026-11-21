@@ -27,9 +27,9 @@ interface QuickOrderRow {
 export default function QuickOrderPage() {
   const { addItem } = useCart();
   const [rows, setRows] = useState<QuickOrderRow[]>([
-    { sku: "BE-ESP32-001", quantity: 10 },
-    { sku: "BE-SEN-DHT22", quantity: 20 },
-    { sku: "BE-ARD-NANO3", quantity: 5 },
+    { sku: "BE-SIGN-EXT-01", quantity: 10 },
+    { sku: "BE-SIGN-ML-01", quantity: 15 },
+    { sku: "BE-SIGN-WAY-01", quantity: 8 },
   ]);
   const [successMessage, setSuccessMessage] = useState<string | null>(null);
 
@@ -102,7 +102,7 @@ export default function QuickOrderPage() {
             <FileSpreadsheet className="w-4 h-4 text-amber-600" /> Batch SKU Order Table
           </CardTitle>
           <CardDescription className="text-xs text-slate-500">
-            Available SKUs: BE-ESP32-001, BE-SEN-DHT22, BE-CUST-LSB01, BE-ARD-NANO3, BE-KIT-37S
+            Available SKUs: BE-SIGN-EXT-01, BE-SIGN-EXT-02, BE-SIGN-ML-01, BE-SIGN-WAY-01, BE-SIGN-IND-01
           </CardDescription>
         </CardHeader>
 
@@ -118,7 +118,7 @@ export default function QuickOrderPage() {
                   <div className="flex-1 w-full sm:w-auto">
                     <input
                       type="text"
-                      placeholder="Enter SKU (e.g. BE-ESP32-001)"
+                      placeholder="Enter SKU (e.g. BE-SIGN-EXT-01)"
                       value={row.sku}
                       onChange={(e) => updateRow(idx, "sku", e.target.value.toUpperCase())}
                       className="w-full rounded-lg border border-slate-300 p-2 text-xs font-mono font-semibold uppercase focus:ring-1 focus:ring-amber-500 focus:outline-none"

@@ -3,58 +3,58 @@
 import React from "react";
 import Link from "next/link";
 import { 
-  Cpu, 
-  Zap, 
-  Wrench, 
-  Layers, 
-  ToggleLeft, 
-  Bot, 
-  Radio, 
+  LogOut, 
+  Languages, 
+  Users, 
+  Footprints, 
+  AlertTriangle, 
+  Compass, 
+  Sparkles, 
   ArrowRight 
 } from "lucide-react";
 
 const CATEGORIES = [
   {
-    name: "ESP32 & IoT Dev",
-    slug: "esp32",
-    icon: Cpu,
-    color: "text-amber-600 bg-amber-500/10",
-  },
-  {
-    name: "Arduino Boards",
-    slug: "arduino",
-    icon: Radio,
-    color: "text-emerald-600 bg-emerald-500/10",
-  },
-  {
-    name: "Digital Sensors",
-    slug: "sensors",
-    icon: Zap,
-    color: "text-amber-700 bg-amber-600/10",
-  },
-  {
-    name: "Logo & Billboards",
-    slug: "custom-billboards",
-    icon: Wrench,
-    color: "text-slate-800 bg-slate-100",
-  },
-  {
-    name: "Robotics & Motors",
-    slug: "robotics",
-    icon: Bot,
-    color: "text-purple-600 bg-purple-500/10",
-  },
-  {
-    name: "Starter Kits",
-    slug: "starter-kits",
-    icon: Layers,
+    name: "Fire & Exit Signs",
+    slug: "fire-emergency-exit",
+    icon: LogOut,
     color: "text-rose-600 bg-rose-500/10",
   },
   {
-    name: "Industrial Switches",
-    slug: "switches",
-    icon: ToggleLeft,
+    name: "Bilingual NBC Signs",
+    slug: "multilingual-safety-signs",
+    icon: Languages,
+    color: "text-amber-600 bg-amber-500/10",
+  },
+  {
+    name: "Restroom & Facility",
+    slug: "restroom-facility-signs",
+    icon: Users,
     color: "text-sky-600 bg-sky-500/10",
+  },
+  {
+    name: "Lift & Stairways",
+    slug: "lift-stairs-wayfinding",
+    icon: Footprints,
+    color: "text-emerald-600 bg-emerald-500/10",
+  },
+  {
+    name: "Shaft & Zone Safety",
+    slug: "industrial-zone-safety",
+    icon: AlertTriangle,
+    color: "text-amber-700 bg-amber-600/10",
+  },
+  {
+    name: "Reception & Lobby",
+    slug: "commercial-reception-signs",
+    icon: Compass,
+    color: "text-purple-600 bg-purple-500/10",
+  },
+  {
+    name: "Custom Glow Signs",
+    slug: "custom-build",
+    icon: Sparkles,
+    color: "text-slate-800 bg-slate-100",
   },
 ];
 

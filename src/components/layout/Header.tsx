@@ -69,7 +69,7 @@ export function Header() {
             <Search className="absolute left-3 top-2.5 h-4 w-4 text-muted-foreground" />
             <input
               type="search"
-              placeholder="Search IoT boards, ESP32, sensors, dev kits..."
+              placeholder="Search exit signs, emergency glow boards, wayfinding, toilet signs..."
               className="w-full rounded-full border border-input bg-slate-50 px-9 py-2 text-sm focus:outline-none focus:ring-2 focus:ring-amber-500 focus:bg-white transition-all"
             />
           </div>
@@ -78,13 +78,13 @@ export function Header() {
         {/* Quick Actions (Desktop) */}
         <nav className="hidden lg:flex items-center gap-6 text-sm font-medium text-slate-700">
           <Link href="/catalog" className="hover:text-amber-600 transition-colors">
-            All Products
+            All Signage
           </Link>
-          <Link href="/categories/iot-dev-boards" className="hover:text-amber-600 transition-colors">
-            IoT & Dev Kits
+          <Link href="/categories/fire-emergency-exit" className="hover:text-amber-600 transition-colors">
+            Exit Signs
           </Link>
           <Link href="/custom-build" className="flex items-center gap-1 text-slate-900 hover:text-amber-600 transition-colors">
-            <Wrench className="w-4 h-4 text-amber-600" /> Custom Builds
+            <Wrench className="w-4 h-4 text-amber-600" /> Custom Signs
           </Link>
           <Link href="/quick-order" className="flex items-center gap-1 text-slate-600 hover:text-amber-600 transition-colors">
             <FileSpreadsheet className="w-4 h-4 text-amber-600" /> Quick Order
@@ -140,7 +140,7 @@ export function Header() {
             <Search className="absolute left-3 top-2.5 h-4 w-4 text-muted-foreground" />
             <input
               type="search"
-              placeholder="Search components, SKUs, boards..."
+              placeholder="Search exit signs, emergency glow boards, wayfinding..."
               className="w-full rounded-md border border-input bg-slate-50 px-9 py-2 text-sm focus:outline-none focus:ring-2 focus:ring-amber-500"
             />
           </div>

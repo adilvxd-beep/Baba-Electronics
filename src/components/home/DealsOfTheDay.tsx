@@ -28,10 +28,11 @@ export function DealsOfTheDay() {
   }, []);
 
   const tabs = [
-    { id: "ALL", label: "All Items" },
-    { id: "IoT & Dev Boards", label: "IoT & Dev Boards" },
-    { id: "Sensors", label: "Sensors" },
-    { id: "Custom Engineering", label: "Custom Builds" },
+    { id: "ALL", label: "All Signage" },
+    { id: "Fire & Emergency Exit", label: "Fire & Exit Signs" },
+    { id: "Multilingual Safety Signs", label: "Bilingual NBC" },
+    { id: "Restroom & Facility Signs", label: "Restroom Signs" },
+    { id: "Industrial & Zone Safety", label: "Shaft & Zone" },
   ];
 
   const filteredProducts = SAMPLE_PRODUCTS.filter((p) => {

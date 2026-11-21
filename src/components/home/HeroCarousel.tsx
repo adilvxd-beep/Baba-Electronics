@@ -5,7 +5,7 @@ import Link from "next/link";
 import { 
   ChevronLeft, 
   ChevronRight, 
-  Cpu, 
+  LogOut, 
   Wrench, 
   Zap, 
   ArrowRight,
@@ -15,33 +15,33 @@ import { Button } from "@/components/ui/button";
 
 const SLIDES = [
   {
-    id: "slide-iot",
-    tag: "IoT & Microcontrollers",
-    title: "ESP32, NodeMCU & Arduino Ecosystems",
-    subtitle: "Engineered for makers and industrial automation. High-speed dual-core Wi-Fi + BLE dev kits with instant dispatch.",
-    ctaPrimary: { label: "Explore Dev Boards", href: "/categories/esp32" },
+    id: "slide-exit",
+    tag: "Life Safety & Emergency Egress",
+    title: "NBC 2016 Compliant LED Emergency Exit Boards",
+    subtitle: "Engineered for high-rise commercial complexes, metro stations, and factories. Optical laser-etched acrylic with 3-hour battery backup.",
+    ctaPrimary: { label: "Explore Exit Signage", href: "/catalog" },
     ctaSecondary: { label: "Full Catalog", href: "/catalog" },
-    image: "https://images.unsplash.com/photo-1518770660439-4636190af475?w=900&auto=format&fit=crop&q=80",
-    icon: Cpu,
+    image: "/products/signage/led-fire-exit-sign-board-right-arrow-be-sign-ext-01.png",
+    icon: LogOut,
   },
   {
-    id: "slide-billboard",
-    tag: "Custom Engineering",
-    title: "Bespoke Billboards & Logo Sync Controllers",
-    subtitle: "Upload your CAD / Gerber files. We manufacture custom LED matrix signage and multi-panel synchronous controllers.",
-    ctaPrimary: { label: "Request Custom Quote", href: "/custom-build" },
-    ctaSecondary: { label: "Engineering Specs", href: "/custom-build" },
-    image: "https://images.unsplash.com/photo-1608555895051-bf552f6ea60e?w=900&auto=format&fit=crop&q=80",
+    id: "slide-wayfinding",
+    tag: "Architectural Wayfinding",
+    title: "Bespoke Acrylic LED Glow Boards & Light Signage",
+    subtitle: "Custom illuminated directional signage for restrooms, elevators, corridors, and corporate lobbies with laser-cut precision.",
+    ctaPrimary: { label: "Request Custom Size", href: "/custom-build" },
+    ctaSecondary: { label: "Technical Specs", href: "/custom-build" },
+    image: "/products/signage/bilingual-led-fire-exit-board-agni-nikas-be-sign-ml-01.png",
     icon: Wrench,
   },
   {
-    id: "slide-sensors",
-    tag: "Sensors & Modules",
-    title: "Precision Digital Sensors & Robotics Shields",
-    subtitle: "Temperature, gas, motion, and environmental sensor modules with verified pinouts and bulk quantity discounts.",
-    ctaPrimary: { label: "Browse Sensors", href: "/categories/sensors" },
-    ctaSecondary: { label: "Wholesale Matrix", href: "/quick-order" },
-    image: "https://images.unsplash.com/photo-1555680202-c86f0e12f086?w=900&auto=format&fit=crop&q=80",
+    id: "slide-safety",
+    tag: "Industrial & Fire Safety",
+    title: "Utility Shaft, Fire Hydrant & Hazard Zone Signs",
+    subtitle: "Clear bilingual Hindi-English escape indicators, fire riser valve indicators, and electrical danger boards for audit compliance.",
+    ctaPrimary: { label: "Browse Safety Signs", href: "/catalog" },
+    ctaSecondary: { label: "B2B Bulk Matrix", href: "/quick-order" },
+    image: "/products/signage/fire-hydrant-valve-indicator-led-board-be-sign-ind-01.png",
     icon: Zap,
   },
 ];
@@ -153,15 +153,15 @@ export function HeroCarousel() {
             <span className="text-[10px] font-bold uppercase tracking-wider text-amber-400 bg-amber-400/10 px-2.5 py-0.5 rounded-full inline-block">
               Custom Engineering
             </span>
-            <h3 className="font-bold text-lg text-white">Need Bespoke Hardware?</h3>
+            <h3 className="font-bold text-lg text-white">Need Bespoke Signage?</h3>
             <p className="text-xs text-slate-300 leading-relaxed">
-              Upload CAD / Gerber `.zip` files for custom logo sync boards and LED billboard manufacturing.
+              Upload architectural vector / CAD drawings for custom bilingual glow signs, dimensional boards, and edge-lit displays.
             </p>
           </div>
           <div className="pt-4 relative z-10">
             <Link href="/custom-build" className="block">
               <Button size="sm" className="w-full bg-amber-500 hover:bg-amber-600 text-slate-950 font-bold text-xs h-9">
-                <Wrench className="w-3.5 h-3.5 mr-1.5" /> Request Custom Quote
+                <Wrench className="w-3.5 h-3.5 mr-1.5" /> Request Custom Sign Quote
               </Button>
             </Link>
           </div>
@@ -171,11 +171,11 @@ export function HeroCarousel() {
         <div className="flex-1 rounded-2xl bg-slate-900 p-6 shadow-md flex flex-col justify-between text-white relative overflow-hidden">
           <div className="space-y-2 relative z-10">
             <span className="text-[10px] font-bold uppercase tracking-wider text-amber-400 bg-amber-400/10 px-2.5 py-0.5 rounded-full inline-block">
-              B2B Wholesale
+              B2B Contractor Procurement
             </span>
             <h3 className="font-bold text-lg text-white">Rapid Matrix Ordering</h3>
             <p className="text-xs text-slate-300 leading-relaxed">
-              Order hundreds of microcontrollers and sensors with tiered pricing and instant GST ITC invoices.
+              Order hundreds of emergency exit and wayfinding signboards with tiered wholesale discounts and instant GST ITC invoices.
             </p>
           </div>
           <div className="pt-4 relative z-10">

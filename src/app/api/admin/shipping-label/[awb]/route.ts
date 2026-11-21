@@ -20,8 +20,8 @@ export async function GET(
     },
     "Delhivery Express Air",
     [
-      { sku: "BE-ESP32-001", name: "ESP32-WROOM-32D Dual-Core Dev Board", quantity: 3, weightGrams: 150 },
-      { sku: "BE-SEN-DHT22", name: "DHT22 Digital Temperature Sensor", quantity: 2, weightGrams: 40 },
+      { sku: "BE-SIGN-EXT-01", name: "LED Fire Exit Sign Board (Right Arrow)", quantity: 3, weightGrams: 850 },
+      { sku: "BE-SIGN-ML-01", name: "Bilingual LED Fire Exit Board", quantity: 2, weightGrams: 900 },
     ]
   );
 

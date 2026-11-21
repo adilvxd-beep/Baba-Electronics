@@ -5,28 +5,28 @@ import { Star, ShieldCheck, Quote } from "lucide-react";
 
 const TESTIMONIALS = [
   {
-    name: "Dr. Ramesh Sharma",
-    role: "HOD, Electronics & Communication",
-    org: "Engineering Institute, Pune",
+    name: "Manoj Chawla",
+    role: "Chief Fire Safety Officer",
+    org: "Commercial IT Tower, Pune",
     rating: 5,
     comment:
-      "We procured 60 ESP32 dev boards and sensor kits for our IoT lab. Delivery was within 48 hours, packaging was top-notch, and the GST invoice with valid ITC was generated immediately.",
+      "We procured 85 bilingual LED fire exit boards and hydrant indicators for our commercial tower. The 3-hour battery backup held up flawlessly during fire NOC inspection. Full GST invoice with valid ITC was generated immediately.",
   },
   {
-    name: "Aditya Patil",
-    role: "Hardware Architect",
-    org: "AgriTech Solutions, Bengaluru",
+    name: "Ar. Sneha Kulkarni",
+    role: "Senior Architect",
+    org: "Urban Spaces Design Studio, Mumbai",
     rating: 5,
     comment:
-      "Ordered custom logo sync boards and DHT22 modules. The technical team at Baba Electronics verified our Gerber files and ensured 100% pin compatibility before dispatch. Outstanding service!",
+      "Specified Baba Electronics' edge-lit acrylic signage for a 4-floor retail commercial center. The laser engraving clarity and anodized aluminum profile look very upscale. Fast delivery and zero defects.",
   },
   {
-    name: "Vikram Singhania",
-    role: "Maker & Embedded Developer",
-    org: "Mumbai",
+    name: "Vikas Aggarwal",
+    role: "Facility & Infrastructure Lead",
+    org: "Metro Logistics Park, Bhiwandi",
     rating: 5,
     comment:
-      "The no-nonsense transparent pricing and bulk discounts make Baba Electronics my go-to store. Getting actual base price plus GST breakdown helps calculate BOM costs accurately.",
+      "The high-luminance master exit banners gave us 35m+ visibility across our 40,000 sq ft warehouse. Direct manufacturer pricing and tiered volume discounts made procurement seamless.",
   },
 ];
 
